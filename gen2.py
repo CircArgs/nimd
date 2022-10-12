@@ -212,13 +212,20 @@ aliases={
     'bit_not': '`~`',
 }
 
+keywords={'div':'divide'}
+
+def name_op(op):
+    if op in keywords:
+        return keywords[op]
+    return op
+
 def gen_op(op, retvals, ):
     binop=retvals.shape[1]>2
     if binop:
         for i in range(len(retvals)):
             temp=retvals.iloc[i]
             for c in get_type_combinations([temp['Ret'], temp['Vec1'], temp['Vec2']]):
-                output(gen_bin_op(op, op, c[1], c[0], c[2]))
+                output(gen_bin_op(name_op(op), op, c[1], c[0], c[2]))
                 if op in aliases:
                     output(gen_bin_op(aliases[op], op, c[1], c[0], c[2]))
     else:
@@ -226,7 +233,7 @@ def gen_op(op, retvals, ):
             temp=retvals.iloc[i].to_dict()
             vec=[v for k,v in temp.items() if 'Vec' in k][0]
             for c in get_type_combinations([temp['Ret'], vec]):
-                output(gen_uni_op(op, op, c[1], c[0]))
+                output(gen_uni_op(name_op(op), op, c[1], c[0]))
                 if op in aliases:
                     output(gen_uni_op(aliases[op], op, c[1], c[0]))
 
