@@ -1,3 +1,4 @@
+
 const libsimdpppath {.strdefine.}: string = ""
 {.localPassc: libsimdpppath.}
 const simd = "<simdpp/simd.h>"
@@ -5,7 +6,6 @@ const simd = "<simdpp/simd.h>"
 #include <simdpp/simd.h>
 using namespace simdpp;
 """.}
-
 
 type SIZE_TYPE = uint8 or int8 or uint16 or int16 or uint32 or int32 or uint64 or int64 or float32 or float64
 
@@ -68,6 +68,56 @@ proc `[]`*(x: uint8x16, i: Natural): uint8 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var uint8x16, v: uint8): uint8x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var uint8x16, i: Natural, v: uint8) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: uint8x16): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint8x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint8x16): string = "uint8x16"& $(x.to_array)
@@ -136,6 +186,56 @@ proc `[]`*(x: int8x16, i: Natural): int8 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var int8x16, v: int8): int8x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var int8x16, i: Natural, v: int8) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: int8x16): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int8x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int8x16): string = "int8x16"& $(x.to_array)
@@ -180,6 +280,32 @@ proc `[]`*(x: uint16x8, i: Natural): uint16 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var uint16x8, v: uint16): uint16x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var uint16x8, i: Natural, v: uint16) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: uint16x8): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint16x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint16x8): string = "uint16x8"& $(x.to_array)
@@ -224,6 +350,32 @@ proc `[]`*(x: int16x8, i: Natural): int16 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var int16x8, v: int16): int16x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var int16x8, i: Natural, v: int16) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: int16x8): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int16x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int16x8): string = "int16x8"& $(x.to_array)
@@ -256,6 +408,20 @@ proc `[]`*(x: uint32x4, i: Natural): uint32 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var uint32x4, v: uint32): uint32x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var uint32x4, v: uint32): uint32x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var uint32x4, v: uint32): uint32x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var uint32x4, v: uint32): uint32x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var uint32x4, i: Natural, v: uint32) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: uint32x4): seq[uint32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: uint32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: uint32x4): string = "uint32x4"& $(x.to_array)
@@ -288,6 +454,20 @@ proc `[]`*(x: int32x4, i: Natural): int32 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var int32x4, v: int32): int32x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var int32x4, v: int32): int32x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var int32x4, v: int32): int32x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var int32x4, v: int32): int32x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var int32x4, i: Natural, v: int32) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: int32x4): seq[int32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: int32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: int32x4): string = "int32x4"& $(x.to_array)
@@ -314,6 +494,14 @@ proc `[]`*(x: uint64x2, i: Natural): uint64 =
     return extract_0(x)###
   else:###
     return extract_1(x)###
+proc insert_0*(x: var uint64x2, v: uint64): uint64x2 {.header: simd, importcpp: "insert<0, 2>(@)"}
+proc insert_1*(x: var uint64x2, v: uint64): uint64x2 {.header: simd, importcpp: "insert<1, 2>(@)"}
+proc `[]=`*(x: var uint64x2, i: Natural, v: uint64) =
+  assert 0 <= i and i < 2 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  else:###
+    x=insert_1(x, v)###
 proc to_seq*(x: uint64x2): seq[uint64] = @[x[0], x[1]]
 proc to_array*(x: uint64x2): auto = [x[0], x[1]]
 proc `$`*(x: uint64x2): string = "uint64x2"& $(x.to_array)
@@ -340,6 +528,14 @@ proc `[]`*(x: int64x2, i: Natural): int64 =
     return extract_0(x)###
   else:###
     return extract_1(x)###
+proc insert_0*(x: var int64x2, v: int64): int64x2 {.header: simd, importcpp: "insert<0, 2>(@)"}
+proc insert_1*(x: var int64x2, v: int64): int64x2 {.header: simd, importcpp: "insert<1, 2>(@)"}
+proc `[]=`*(x: var int64x2, i: Natural, v: int64) =
+  assert 0 <= i and i < 2 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  else:###
+    x=insert_1(x, v)###
 proc to_seq*(x: int64x2): seq[int64] = @[x[0], x[1]]
 proc to_array*(x: int64x2): auto = [x[0], x[1]]
 proc `$`*(x: int64x2): string = "int64x2"& $(x.to_array)
@@ -372,6 +568,20 @@ proc `[]`*(x: float32x4, i: Natural): float32 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var float32x4, v: float32): float32x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var float32x4, v: float32): float32x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var float32x4, v: float32): float32x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var float32x4, v: float32): float32x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var float32x4, i: Natural, v: float32) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: float32x4): seq[float32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: float32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: float32x4): string = "float32x4"& $(x.to_array)
@@ -398,6 +608,14 @@ proc `[]`*(x: float64x2, i: Natural): float64 =
     return extract_0(x)###
   else:###
     return extract_1(x)###
+proc insert_0*(x: var float64x2, v: float64): float64x2 {.header: simd, importcpp: "insert<0, 2>(@)"}
+proc insert_1*(x: var float64x2, v: float64): float64x2 {.header: simd, importcpp: "insert<1, 2>(@)"}
+proc `[]=`*(x: var float64x2, i: Natural, v: float64) =
+  assert 0 <= i and i < 2 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  else:###
+    x=insert_1(x, v)###
 proc to_seq*(x: float64x2): seq[float64] = @[x[0], x[1]]
 proc to_array*(x: float64x2): auto = [x[0], x[1]]
 proc `$`*(x: float64x2): string = "float64x2"& $(x.to_array)
@@ -514,6 +732,104 @@ proc `[]`*(x: uint8x32, i: Natural): uint8 =
     return extract_30(x)###
   else:###
     return extract_31(x)###
+proc insert_0*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<0, 32>(@)"}
+proc insert_1*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<1, 32>(@)"}
+proc insert_2*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<2, 32>(@)"}
+proc insert_3*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<3, 32>(@)"}
+proc insert_4*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<4, 32>(@)"}
+proc insert_5*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<5, 32>(@)"}
+proc insert_6*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<6, 32>(@)"}
+proc insert_7*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<7, 32>(@)"}
+proc insert_8*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<8, 32>(@)"}
+proc insert_9*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<9, 32>(@)"}
+proc insert_10*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<10, 32>(@)"}
+proc insert_11*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<11, 32>(@)"}
+proc insert_12*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<12, 32>(@)"}
+proc insert_13*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<13, 32>(@)"}
+proc insert_14*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<14, 32>(@)"}
+proc insert_15*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<15, 32>(@)"}
+proc insert_16*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<16, 32>(@)"}
+proc insert_17*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<17, 32>(@)"}
+proc insert_18*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<18, 32>(@)"}
+proc insert_19*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<19, 32>(@)"}
+proc insert_20*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<20, 32>(@)"}
+proc insert_21*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<21, 32>(@)"}
+proc insert_22*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<22, 32>(@)"}
+proc insert_23*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<23, 32>(@)"}
+proc insert_24*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<24, 32>(@)"}
+proc insert_25*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<25, 32>(@)"}
+proc insert_26*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<26, 32>(@)"}
+proc insert_27*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<27, 32>(@)"}
+proc insert_28*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<28, 32>(@)"}
+proc insert_29*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<29, 32>(@)"}
+proc insert_30*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<30, 32>(@)"}
+proc insert_31*(x: var uint8x32, v: uint8): uint8x32 {.header: simd, importcpp: "insert<31, 32>(@)"}
+proc `[]=`*(x: var uint8x32, i: Natural, v: uint8) =
+  assert 0 <= i and i < 32 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  else:###
+    x=insert_31(x, v)###
 proc to_seq*(x: uint8x32): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: uint8x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: uint8x32): string = "uint8x32"& $(x.to_array)
@@ -630,6 +946,104 @@ proc `[]`*(x: int8x32, i: Natural): int8 =
     return extract_30(x)###
   else:###
     return extract_31(x)###
+proc insert_0*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<0, 32>(@)"}
+proc insert_1*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<1, 32>(@)"}
+proc insert_2*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<2, 32>(@)"}
+proc insert_3*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<3, 32>(@)"}
+proc insert_4*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<4, 32>(@)"}
+proc insert_5*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<5, 32>(@)"}
+proc insert_6*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<6, 32>(@)"}
+proc insert_7*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<7, 32>(@)"}
+proc insert_8*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<8, 32>(@)"}
+proc insert_9*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<9, 32>(@)"}
+proc insert_10*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<10, 32>(@)"}
+proc insert_11*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<11, 32>(@)"}
+proc insert_12*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<12, 32>(@)"}
+proc insert_13*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<13, 32>(@)"}
+proc insert_14*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<14, 32>(@)"}
+proc insert_15*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<15, 32>(@)"}
+proc insert_16*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<16, 32>(@)"}
+proc insert_17*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<17, 32>(@)"}
+proc insert_18*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<18, 32>(@)"}
+proc insert_19*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<19, 32>(@)"}
+proc insert_20*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<20, 32>(@)"}
+proc insert_21*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<21, 32>(@)"}
+proc insert_22*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<22, 32>(@)"}
+proc insert_23*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<23, 32>(@)"}
+proc insert_24*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<24, 32>(@)"}
+proc insert_25*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<25, 32>(@)"}
+proc insert_26*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<26, 32>(@)"}
+proc insert_27*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<27, 32>(@)"}
+proc insert_28*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<28, 32>(@)"}
+proc insert_29*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<29, 32>(@)"}
+proc insert_30*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<30, 32>(@)"}
+proc insert_31*(x: var int8x32, v: int8): int8x32 {.header: simd, importcpp: "insert<31, 32>(@)"}
+proc `[]=`*(x: var int8x32, i: Natural, v: int8) =
+  assert 0 <= i and i < 32 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  else:###
+    x=insert_31(x, v)###
 proc to_seq*(x: int8x32): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: int8x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: int8x32): string = "int8x32"& $(x.to_array)
@@ -698,6 +1112,56 @@ proc `[]`*(x: uint16x16, i: Natural): uint16 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var uint16x16, v: uint16): uint16x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var uint16x16, i: Natural, v: uint16) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: uint16x16): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint16x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint16x16): string = "uint16x16"& $(x.to_array)
@@ -766,6 +1230,56 @@ proc `[]`*(x: int16x16, i: Natural): int16 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var int16x16, v: int16): int16x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var int16x16, i: Natural, v: int16) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: int16x16): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int16x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int16x16): string = "int16x16"& $(x.to_array)
@@ -810,6 +1324,32 @@ proc `[]`*(x: uint32x8, i: Natural): uint32 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var uint32x8, v: uint32): uint32x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var uint32x8, i: Natural, v: uint32) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: uint32x8): seq[uint32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint32x8): string = "uint32x8"& $(x.to_array)
@@ -854,6 +1394,32 @@ proc `[]`*(x: int32x8, i: Natural): int32 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var int32x8, v: int32): int32x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var int32x8, i: Natural, v: int32) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: int32x8): seq[int32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int32x8): string = "int32x8"& $(x.to_array)
@@ -886,6 +1452,20 @@ proc `[]`*(x: uint64x4, i: Natural): uint64 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var uint64x4, v: uint64): uint64x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var uint64x4, v: uint64): uint64x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var uint64x4, v: uint64): uint64x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var uint64x4, v: uint64): uint64x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var uint64x4, i: Natural, v: uint64) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: uint64x4): seq[uint64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: uint64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: uint64x4): string = "uint64x4"& $(x.to_array)
@@ -918,6 +1498,20 @@ proc `[]`*(x: int64x4, i: Natural): int64 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var int64x4, v: int64): int64x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var int64x4, v: int64): int64x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var int64x4, v: int64): int64x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var int64x4, v: int64): int64x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var int64x4, i: Natural, v: int64) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: int64x4): seq[int64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: int64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: int64x4): string = "int64x4"& $(x.to_array)
@@ -962,6 +1556,32 @@ proc `[]`*(x: float32x8, i: Natural): float32 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var float32x8, v: float32): float32x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var float32x8, i: Natural, v: float32) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: float32x8): seq[float32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: float32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: float32x8): string = "float32x8"& $(x.to_array)
@@ -994,6 +1614,20 @@ proc `[]`*(x: float64x4, i: Natural): float64 =
     return extract_2(x)###
   else:###
     return extract_3(x)###
+proc insert_0*(x: var float64x4, v: float64): float64x4 {.header: simd, importcpp: "insert<0, 4>(@)"}
+proc insert_1*(x: var float64x4, v: float64): float64x4 {.header: simd, importcpp: "insert<1, 4>(@)"}
+proc insert_2*(x: var float64x4, v: float64): float64x4 {.header: simd, importcpp: "insert<2, 4>(@)"}
+proc insert_3*(x: var float64x4, v: float64): float64x4 {.header: simd, importcpp: "insert<3, 4>(@)"}
+proc `[]=`*(x: var float64x4, i: Natural, v: float64) =
+  assert 0 <= i and i < 4 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  else:###
+    x=insert_3(x, v)###
 proc to_seq*(x: float64x4): seq[float64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: float64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: float64x4): string = "float64x4"& $(x.to_array)
@@ -1206,6 +1840,200 @@ proc `[]`*(x: uint8x64, i: Natural): uint8 =
     return extract_62(x)###
   else:###
     return extract_63(x)###
+proc insert_0*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<0, 64>(@)"}
+proc insert_1*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<1, 64>(@)"}
+proc insert_2*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<2, 64>(@)"}
+proc insert_3*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<3, 64>(@)"}
+proc insert_4*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<4, 64>(@)"}
+proc insert_5*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<5, 64>(@)"}
+proc insert_6*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<6, 64>(@)"}
+proc insert_7*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<7, 64>(@)"}
+proc insert_8*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<8, 64>(@)"}
+proc insert_9*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<9, 64>(@)"}
+proc insert_10*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<10, 64>(@)"}
+proc insert_11*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<11, 64>(@)"}
+proc insert_12*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<12, 64>(@)"}
+proc insert_13*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<13, 64>(@)"}
+proc insert_14*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<14, 64>(@)"}
+proc insert_15*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<15, 64>(@)"}
+proc insert_16*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<16, 64>(@)"}
+proc insert_17*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<17, 64>(@)"}
+proc insert_18*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<18, 64>(@)"}
+proc insert_19*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<19, 64>(@)"}
+proc insert_20*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<20, 64>(@)"}
+proc insert_21*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<21, 64>(@)"}
+proc insert_22*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<22, 64>(@)"}
+proc insert_23*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<23, 64>(@)"}
+proc insert_24*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<24, 64>(@)"}
+proc insert_25*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<25, 64>(@)"}
+proc insert_26*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<26, 64>(@)"}
+proc insert_27*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<27, 64>(@)"}
+proc insert_28*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<28, 64>(@)"}
+proc insert_29*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<29, 64>(@)"}
+proc insert_30*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<30, 64>(@)"}
+proc insert_31*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<31, 64>(@)"}
+proc insert_32*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<32, 64>(@)"}
+proc insert_33*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<33, 64>(@)"}
+proc insert_34*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<34, 64>(@)"}
+proc insert_35*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<35, 64>(@)"}
+proc insert_36*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<36, 64>(@)"}
+proc insert_37*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<37, 64>(@)"}
+proc insert_38*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<38, 64>(@)"}
+proc insert_39*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<39, 64>(@)"}
+proc insert_40*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<40, 64>(@)"}
+proc insert_41*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<41, 64>(@)"}
+proc insert_42*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<42, 64>(@)"}
+proc insert_43*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<43, 64>(@)"}
+proc insert_44*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<44, 64>(@)"}
+proc insert_45*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<45, 64>(@)"}
+proc insert_46*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<46, 64>(@)"}
+proc insert_47*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<47, 64>(@)"}
+proc insert_48*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<48, 64>(@)"}
+proc insert_49*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<49, 64>(@)"}
+proc insert_50*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<50, 64>(@)"}
+proc insert_51*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<51, 64>(@)"}
+proc insert_52*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<52, 64>(@)"}
+proc insert_53*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<53, 64>(@)"}
+proc insert_54*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<54, 64>(@)"}
+proc insert_55*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<55, 64>(@)"}
+proc insert_56*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<56, 64>(@)"}
+proc insert_57*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<57, 64>(@)"}
+proc insert_58*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<58, 64>(@)"}
+proc insert_59*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<59, 64>(@)"}
+proc insert_60*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<60, 64>(@)"}
+proc insert_61*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<61, 64>(@)"}
+proc insert_62*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<62, 64>(@)"}
+proc insert_63*(x: var uint8x64, v: uint8): uint8x64 {.header: simd, importcpp: "insert<63, 64>(@)"}
+proc `[]=`*(x: var uint8x64, i: Natural, v: uint8) =
+  assert 0 <= i and i < 64 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  elif i == 31:###
+    x=insert_31(x, v)###
+  elif i == 32:###
+    x=insert_32(x, v)###
+  elif i == 33:###
+    x=insert_33(x, v)###
+  elif i == 34:###
+    x=insert_34(x, v)###
+  elif i == 35:###
+    x=insert_35(x, v)###
+  elif i == 36:###
+    x=insert_36(x, v)###
+  elif i == 37:###
+    x=insert_37(x, v)###
+  elif i == 38:###
+    x=insert_38(x, v)###
+  elif i == 39:###
+    x=insert_39(x, v)###
+  elif i == 40:###
+    x=insert_40(x, v)###
+  elif i == 41:###
+    x=insert_41(x, v)###
+  elif i == 42:###
+    x=insert_42(x, v)###
+  elif i == 43:###
+    x=insert_43(x, v)###
+  elif i == 44:###
+    x=insert_44(x, v)###
+  elif i == 45:###
+    x=insert_45(x, v)###
+  elif i == 46:###
+    x=insert_46(x, v)###
+  elif i == 47:###
+    x=insert_47(x, v)###
+  elif i == 48:###
+    x=insert_48(x, v)###
+  elif i == 49:###
+    x=insert_49(x, v)###
+  elif i == 50:###
+    x=insert_50(x, v)###
+  elif i == 51:###
+    x=insert_51(x, v)###
+  elif i == 52:###
+    x=insert_52(x, v)###
+  elif i == 53:###
+    x=insert_53(x, v)###
+  elif i == 54:###
+    x=insert_54(x, v)###
+  elif i == 55:###
+    x=insert_55(x, v)###
+  elif i == 56:###
+    x=insert_56(x, v)###
+  elif i == 57:###
+    x=insert_57(x, v)###
+  elif i == 58:###
+    x=insert_58(x, v)###
+  elif i == 59:###
+    x=insert_59(x, v)###
+  elif i == 60:###
+    x=insert_60(x, v)###
+  elif i == 61:###
+    x=insert_61(x, v)###
+  elif i == 62:###
+    x=insert_62(x, v)###
+  else:###
+    x=insert_63(x, v)###
 proc to_seq*(x: uint8x64): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc to_array*(x: uint8x64): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc `$`*(x: uint8x64): string = "uint8x64"& $(x.to_array)
@@ -1418,6 +2246,200 @@ proc `[]`*(x: int8x64, i: Natural): int8 =
     return extract_62(x)###
   else:###
     return extract_63(x)###
+proc insert_0*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<0, 64>(@)"}
+proc insert_1*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<1, 64>(@)"}
+proc insert_2*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<2, 64>(@)"}
+proc insert_3*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<3, 64>(@)"}
+proc insert_4*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<4, 64>(@)"}
+proc insert_5*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<5, 64>(@)"}
+proc insert_6*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<6, 64>(@)"}
+proc insert_7*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<7, 64>(@)"}
+proc insert_8*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<8, 64>(@)"}
+proc insert_9*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<9, 64>(@)"}
+proc insert_10*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<10, 64>(@)"}
+proc insert_11*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<11, 64>(@)"}
+proc insert_12*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<12, 64>(@)"}
+proc insert_13*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<13, 64>(@)"}
+proc insert_14*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<14, 64>(@)"}
+proc insert_15*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<15, 64>(@)"}
+proc insert_16*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<16, 64>(@)"}
+proc insert_17*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<17, 64>(@)"}
+proc insert_18*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<18, 64>(@)"}
+proc insert_19*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<19, 64>(@)"}
+proc insert_20*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<20, 64>(@)"}
+proc insert_21*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<21, 64>(@)"}
+proc insert_22*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<22, 64>(@)"}
+proc insert_23*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<23, 64>(@)"}
+proc insert_24*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<24, 64>(@)"}
+proc insert_25*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<25, 64>(@)"}
+proc insert_26*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<26, 64>(@)"}
+proc insert_27*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<27, 64>(@)"}
+proc insert_28*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<28, 64>(@)"}
+proc insert_29*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<29, 64>(@)"}
+proc insert_30*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<30, 64>(@)"}
+proc insert_31*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<31, 64>(@)"}
+proc insert_32*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<32, 64>(@)"}
+proc insert_33*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<33, 64>(@)"}
+proc insert_34*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<34, 64>(@)"}
+proc insert_35*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<35, 64>(@)"}
+proc insert_36*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<36, 64>(@)"}
+proc insert_37*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<37, 64>(@)"}
+proc insert_38*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<38, 64>(@)"}
+proc insert_39*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<39, 64>(@)"}
+proc insert_40*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<40, 64>(@)"}
+proc insert_41*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<41, 64>(@)"}
+proc insert_42*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<42, 64>(@)"}
+proc insert_43*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<43, 64>(@)"}
+proc insert_44*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<44, 64>(@)"}
+proc insert_45*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<45, 64>(@)"}
+proc insert_46*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<46, 64>(@)"}
+proc insert_47*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<47, 64>(@)"}
+proc insert_48*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<48, 64>(@)"}
+proc insert_49*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<49, 64>(@)"}
+proc insert_50*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<50, 64>(@)"}
+proc insert_51*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<51, 64>(@)"}
+proc insert_52*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<52, 64>(@)"}
+proc insert_53*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<53, 64>(@)"}
+proc insert_54*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<54, 64>(@)"}
+proc insert_55*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<55, 64>(@)"}
+proc insert_56*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<56, 64>(@)"}
+proc insert_57*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<57, 64>(@)"}
+proc insert_58*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<58, 64>(@)"}
+proc insert_59*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<59, 64>(@)"}
+proc insert_60*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<60, 64>(@)"}
+proc insert_61*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<61, 64>(@)"}
+proc insert_62*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<62, 64>(@)"}
+proc insert_63*(x: var int8x64, v: int8): int8x64 {.header: simd, importcpp: "insert<63, 64>(@)"}
+proc `[]=`*(x: var int8x64, i: Natural, v: int8) =
+  assert 0 <= i and i < 64 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  elif i == 31:###
+    x=insert_31(x, v)###
+  elif i == 32:###
+    x=insert_32(x, v)###
+  elif i == 33:###
+    x=insert_33(x, v)###
+  elif i == 34:###
+    x=insert_34(x, v)###
+  elif i == 35:###
+    x=insert_35(x, v)###
+  elif i == 36:###
+    x=insert_36(x, v)###
+  elif i == 37:###
+    x=insert_37(x, v)###
+  elif i == 38:###
+    x=insert_38(x, v)###
+  elif i == 39:###
+    x=insert_39(x, v)###
+  elif i == 40:###
+    x=insert_40(x, v)###
+  elif i == 41:###
+    x=insert_41(x, v)###
+  elif i == 42:###
+    x=insert_42(x, v)###
+  elif i == 43:###
+    x=insert_43(x, v)###
+  elif i == 44:###
+    x=insert_44(x, v)###
+  elif i == 45:###
+    x=insert_45(x, v)###
+  elif i == 46:###
+    x=insert_46(x, v)###
+  elif i == 47:###
+    x=insert_47(x, v)###
+  elif i == 48:###
+    x=insert_48(x, v)###
+  elif i == 49:###
+    x=insert_49(x, v)###
+  elif i == 50:###
+    x=insert_50(x, v)###
+  elif i == 51:###
+    x=insert_51(x, v)###
+  elif i == 52:###
+    x=insert_52(x, v)###
+  elif i == 53:###
+    x=insert_53(x, v)###
+  elif i == 54:###
+    x=insert_54(x, v)###
+  elif i == 55:###
+    x=insert_55(x, v)###
+  elif i == 56:###
+    x=insert_56(x, v)###
+  elif i == 57:###
+    x=insert_57(x, v)###
+  elif i == 58:###
+    x=insert_58(x, v)###
+  elif i == 59:###
+    x=insert_59(x, v)###
+  elif i == 60:###
+    x=insert_60(x, v)###
+  elif i == 61:###
+    x=insert_61(x, v)###
+  elif i == 62:###
+    x=insert_62(x, v)###
+  else:###
+    x=insert_63(x, v)###
 proc to_seq*(x: int8x64): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc to_array*(x: int8x64): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc `$`*(x: int8x64): string = "int8x64"& $(x.to_array)
@@ -1534,6 +2556,104 @@ proc `[]`*(x: uint16x32, i: Natural): uint16 =
     return extract_30(x)###
   else:###
     return extract_31(x)###
+proc insert_0*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<0, 32>(@)"}
+proc insert_1*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<1, 32>(@)"}
+proc insert_2*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<2, 32>(@)"}
+proc insert_3*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<3, 32>(@)"}
+proc insert_4*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<4, 32>(@)"}
+proc insert_5*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<5, 32>(@)"}
+proc insert_6*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<6, 32>(@)"}
+proc insert_7*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<7, 32>(@)"}
+proc insert_8*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<8, 32>(@)"}
+proc insert_9*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<9, 32>(@)"}
+proc insert_10*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<10, 32>(@)"}
+proc insert_11*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<11, 32>(@)"}
+proc insert_12*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<12, 32>(@)"}
+proc insert_13*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<13, 32>(@)"}
+proc insert_14*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<14, 32>(@)"}
+proc insert_15*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<15, 32>(@)"}
+proc insert_16*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<16, 32>(@)"}
+proc insert_17*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<17, 32>(@)"}
+proc insert_18*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<18, 32>(@)"}
+proc insert_19*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<19, 32>(@)"}
+proc insert_20*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<20, 32>(@)"}
+proc insert_21*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<21, 32>(@)"}
+proc insert_22*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<22, 32>(@)"}
+proc insert_23*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<23, 32>(@)"}
+proc insert_24*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<24, 32>(@)"}
+proc insert_25*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<25, 32>(@)"}
+proc insert_26*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<26, 32>(@)"}
+proc insert_27*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<27, 32>(@)"}
+proc insert_28*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<28, 32>(@)"}
+proc insert_29*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<29, 32>(@)"}
+proc insert_30*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<30, 32>(@)"}
+proc insert_31*(x: var uint16x32, v: uint16): uint16x32 {.header: simd, importcpp: "insert<31, 32>(@)"}
+proc `[]=`*(x: var uint16x32, i: Natural, v: uint16) =
+  assert 0 <= i and i < 32 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  else:###
+    x=insert_31(x, v)###
 proc to_seq*(x: uint16x32): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: uint16x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: uint16x32): string = "uint16x32"& $(x.to_array)
@@ -1650,6 +2770,104 @@ proc `[]`*(x: int16x32, i: Natural): int16 =
     return extract_30(x)###
   else:###
     return extract_31(x)###
+proc insert_0*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<0, 32>(@)"}
+proc insert_1*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<1, 32>(@)"}
+proc insert_2*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<2, 32>(@)"}
+proc insert_3*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<3, 32>(@)"}
+proc insert_4*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<4, 32>(@)"}
+proc insert_5*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<5, 32>(@)"}
+proc insert_6*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<6, 32>(@)"}
+proc insert_7*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<7, 32>(@)"}
+proc insert_8*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<8, 32>(@)"}
+proc insert_9*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<9, 32>(@)"}
+proc insert_10*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<10, 32>(@)"}
+proc insert_11*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<11, 32>(@)"}
+proc insert_12*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<12, 32>(@)"}
+proc insert_13*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<13, 32>(@)"}
+proc insert_14*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<14, 32>(@)"}
+proc insert_15*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<15, 32>(@)"}
+proc insert_16*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<16, 32>(@)"}
+proc insert_17*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<17, 32>(@)"}
+proc insert_18*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<18, 32>(@)"}
+proc insert_19*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<19, 32>(@)"}
+proc insert_20*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<20, 32>(@)"}
+proc insert_21*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<21, 32>(@)"}
+proc insert_22*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<22, 32>(@)"}
+proc insert_23*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<23, 32>(@)"}
+proc insert_24*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<24, 32>(@)"}
+proc insert_25*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<25, 32>(@)"}
+proc insert_26*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<26, 32>(@)"}
+proc insert_27*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<27, 32>(@)"}
+proc insert_28*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<28, 32>(@)"}
+proc insert_29*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<29, 32>(@)"}
+proc insert_30*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<30, 32>(@)"}
+proc insert_31*(x: var int16x32, v: int16): int16x32 {.header: simd, importcpp: "insert<31, 32>(@)"}
+proc `[]=`*(x: var int16x32, i: Natural, v: int16) =
+  assert 0 <= i and i < 32 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  elif i == 15:###
+    x=insert_15(x, v)###
+  elif i == 16:###
+    x=insert_16(x, v)###
+  elif i == 17:###
+    x=insert_17(x, v)###
+  elif i == 18:###
+    x=insert_18(x, v)###
+  elif i == 19:###
+    x=insert_19(x, v)###
+  elif i == 20:###
+    x=insert_20(x, v)###
+  elif i == 21:###
+    x=insert_21(x, v)###
+  elif i == 22:###
+    x=insert_22(x, v)###
+  elif i == 23:###
+    x=insert_23(x, v)###
+  elif i == 24:###
+    x=insert_24(x, v)###
+  elif i == 25:###
+    x=insert_25(x, v)###
+  elif i == 26:###
+    x=insert_26(x, v)###
+  elif i == 27:###
+    x=insert_27(x, v)###
+  elif i == 28:###
+    x=insert_28(x, v)###
+  elif i == 29:###
+    x=insert_29(x, v)###
+  elif i == 30:###
+    x=insert_30(x, v)###
+  else:###
+    x=insert_31(x, v)###
 proc to_seq*(x: int16x32): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: int16x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: int16x32): string = "int16x32"& $(x.to_array)
@@ -1718,6 +2936,56 @@ proc `[]`*(x: uint32x16, i: Natural): uint32 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var uint32x16, v: uint32): uint32x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var uint32x16, i: Natural, v: uint32) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: uint32x16): seq[uint32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint32x16): string = "uint32x16"& $(x.to_array)
@@ -1786,6 +3054,56 @@ proc `[]`*(x: int32x16, i: Natural): int32 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var int32x16, v: int32): int32x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var int32x16, i: Natural, v: int32) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: int32x16): seq[int32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int32x16): string = "int32x16"& $(x.to_array)
@@ -1830,6 +3148,32 @@ proc `[]`*(x: uint64x8, i: Natural): uint64 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var uint64x8, v: uint64): uint64x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var uint64x8, i: Natural, v: uint64) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: uint64x8): seq[uint64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint64x8): string = "uint64x8"& $(x.to_array)
@@ -1874,6 +3218,32 @@ proc `[]`*(x: int64x8, i: Natural): int64 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var int64x8, v: int64): int64x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var int64x8, i: Natural, v: int64) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: int64x8): seq[int64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int64x8): string = "int64x8"& $(x.to_array)
@@ -1942,6 +3312,56 @@ proc `[]`*(x: float32x16, i: Natural): float32 =
     return extract_14(x)###
   else:###
     return extract_15(x)###
+proc insert_0*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<0, 16>(@)"}
+proc insert_1*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<1, 16>(@)"}
+proc insert_2*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<2, 16>(@)"}
+proc insert_3*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<3, 16>(@)"}
+proc insert_4*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<4, 16>(@)"}
+proc insert_5*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<5, 16>(@)"}
+proc insert_6*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<6, 16>(@)"}
+proc insert_7*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<7, 16>(@)"}
+proc insert_8*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<8, 16>(@)"}
+proc insert_9*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<9, 16>(@)"}
+proc insert_10*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<10, 16>(@)"}
+proc insert_11*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<11, 16>(@)"}
+proc insert_12*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<12, 16>(@)"}
+proc insert_13*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<13, 16>(@)"}
+proc insert_14*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<14, 16>(@)"}
+proc insert_15*(x: var float32x16, v: float32): float32x16 {.header: simd, importcpp: "insert<15, 16>(@)"}
+proc `[]=`*(x: var float32x16, i: Natural, v: float32) =
+  assert 0 <= i and i < 16 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  elif i == 7:###
+    x=insert_7(x, v)###
+  elif i == 8:###
+    x=insert_8(x, v)###
+  elif i == 9:###
+    x=insert_9(x, v)###
+  elif i == 10:###
+    x=insert_10(x, v)###
+  elif i == 11:###
+    x=insert_11(x, v)###
+  elif i == 12:###
+    x=insert_12(x, v)###
+  elif i == 13:###
+    x=insert_13(x, v)###
+  elif i == 14:###
+    x=insert_14(x, v)###
+  else:###
+    x=insert_15(x, v)###
 proc to_seq*(x: float32x16): seq[float32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: float32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: float32x16): string = "float32x16"& $(x.to_array)
@@ -1986,6 +3406,32 @@ proc `[]`*(x: float64x8, i: Natural): float64 =
     return extract_6(x)###
   else:###
     return extract_7(x)###
+proc insert_0*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<0, 8>(@)"}
+proc insert_1*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<1, 8>(@)"}
+proc insert_2*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<2, 8>(@)"}
+proc insert_3*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<3, 8>(@)"}
+proc insert_4*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<4, 8>(@)"}
+proc insert_5*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<5, 8>(@)"}
+proc insert_6*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<6, 8>(@)"}
+proc insert_7*(x: var float64x8, v: float64): float64x8 {.header: simd, importcpp: "insert<7, 8>(@)"}
+proc `[]=`*(x: var float64x8, i: Natural, v: float64) =
+  assert 0 <= i and i < 8 ###
+  if i == 0:###
+    x=insert_0(x, v)###
+  elif i == 1:###
+    x=insert_1(x, v)###
+  elif i == 2:###
+    x=insert_2(x, v)###
+  elif i == 3:###
+    x=insert_3(x, v)###
+  elif i == 4:###
+    x=insert_4(x, v)###
+  elif i == 5:###
+    x=insert_5(x, v)###
+  elif i == 6:###
+    x=insert_6(x, v)###
+  else:###
+    x=insert_7(x, v)###
 proc to_seq*(x: float64x8): seq[float64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: float64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: float64x8): string = "float64x8"& $(x.to_array)
