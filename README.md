@@ -10,6 +10,8 @@ Courtesy of [libsimdpp](https://github.com/p12tic/libsimdpp):
 
 # Simple example
 ```nim
+import nimd
+
 var  x = Vector(1.float32, 2, 3, 4)
 let 
   y = Vector(4.float32, 3, 2, 1)
