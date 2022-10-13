@@ -1,5 +1,7 @@
 # nimd
-NIMD: A Write Once SIMD Library for Nim wrapping [libsimdpp](https://github.com/p12tic/libsimdpp)
+NIMD: A Write Once SIMD Library for Nim wrapping [libsimdpp](https://github.com/p12tic/libsimdpp).
+
+NIMD supports a large part of `libsimdpp`. See its docs: [libsimdpp docs](https://p12tic.github.io/libsimdpp/v2.2-dev/libsimdpp/w/)
 
 NIMD allows you to use SIMD vectorization without the need for specific intrinsics. 
 
