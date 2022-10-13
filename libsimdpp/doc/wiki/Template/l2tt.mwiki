@@ -1,3 +1,0 @@
-{{#if: {{{1|}}} |[[{{trim|{{{1|}}}}}|<tt>{{l2tt/core|{{{1}}}|{{{2|}}}|{{{3|}}}}}</tt>]]| {{error|no link given}} }}<noinclude>
-{{documentation | Template:rl/doc}}
-</noinclude>

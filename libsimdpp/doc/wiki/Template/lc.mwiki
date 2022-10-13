@@ -1,3 +1,0 @@
-<span class="t-lc">{{#autolink:{{get_lang}}|{{{1|}}}|{{{2|}}}}}</span><noinclude>
-{{documentation}}
-</noinclude>

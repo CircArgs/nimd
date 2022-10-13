@@ -1,3 +1,0 @@
-{{mark|constant {{#if: {{{mem|}}} | of {{tt|{{{mem}}}}}}}}}<noinclude>
-{{documentation | Template:mark/doc}}
-</noinclude>

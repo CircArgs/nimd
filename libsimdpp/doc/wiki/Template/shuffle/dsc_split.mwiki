@@ -1,1 +1,0 @@
-{{dsc tfun | shuffle/split | splits a vector into two vectors half as wide }}

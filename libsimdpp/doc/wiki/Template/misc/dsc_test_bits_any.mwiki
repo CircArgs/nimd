@@ -1,1 +1,0 @@
-{{dsc tfun | misc/test_bits_any | checks whether any bits are set in the given vector }}

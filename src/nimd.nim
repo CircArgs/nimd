@@ -1,7 +1,10 @@
-{.localPassc: "-I/home/nick/Projects/nimd/libsimdpp".}
-{.emit: "using namespace simdpp;".}
-
+const libsimdpppath {.strdefine.}: string = ""
+{.localPassc: libsimdpppath.}
 const simd = "<simdpp/simd.h>"
+{.emit: """
+#include <simdpp/simd.h>
+using namespace simdpp;
+""".}
 
 
 type SIZE_TYPE = uint8 or int8 or uint16 or int16 or uint32 or int32 or uint64 or int64 or float32 or float64
@@ -12,6 +15,7 @@ type SIZE_TYPE = uint8 or int8 or uint16 or int16 or uint32 or int32 or uint64 o
 type uint8x16* {.header: simd, importcpp: "uint8<16>".} = object
 type mask_uint8x16* {.header: simd, importcpp: "mask_uint8<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: uint8): uint8x16 {.header: simd, importcpp: "make_uint<uint8<16>>(@)".}
+proc splat_uint8x16*(x: SIZE_TYPE): uint8x16 = Vector(x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8)
 proc to_mask*(x: uint8x16): mask_uint8x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint8x16): Natural = 16
 proc extract_0*(x: uint8x16): uint8  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -67,7 +71,7 @@ proc `[]`*(x: uint8x16, i: Natural): uint8 =
 proc to_seq*(x: uint8x16): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint8x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint8x16): string = "uint8x16"& $(x.to_array)
-proc to_uint8x16*[T = SIZE_TYPE](x: seq[T]): uint8x16 =
+proc to_uint8x16*(x: seq[SIZE_TYPE]): uint8x16 =
   assert x.len == 16 ###
   Vector(x[0].uint8, x[1].uint8, x[2].uint8, x[3].uint8, x[4].uint8, x[5].uint8, x[6].uint8, x[7].uint8, x[8].uint8, x[9].uint8, x[10].uint8, x[11].uint8, x[12].uint8, x[13].uint8, x[14].uint8, x[15].uint8)
 ############################################
@@ -79,6 +83,7 @@ proc to_uint8x16*[T = SIZE_TYPE](x: seq[T]): uint8x16 =
 type int8x16* {.header: simd, importcpp: "int8<16>".} = object
 type mask_int8x16* {.header: simd, importcpp: "mask_int8<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: int8): int8x16 {.header: simd, importcpp: "make_int<int8<16>>(@)".}
+proc splat_int8x16*(x: SIZE_TYPE): int8x16 = Vector(x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8)
 proc to_mask*(x: int8x16): mask_int8x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int8x16): Natural = 16
 proc extract_0*(x: int8x16): int8  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -134,7 +139,7 @@ proc `[]`*(x: int8x16, i: Natural): int8 =
 proc to_seq*(x: int8x16): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int8x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int8x16): string = "int8x16"& $(x.to_array)
-proc to_int8x16*[T = SIZE_TYPE](x: seq[T]): int8x16 =
+proc to_int8x16*(x: seq[SIZE_TYPE]): int8x16 =
   assert x.len == 16 ###
   Vector(x[0].int8, x[1].int8, x[2].int8, x[3].int8, x[4].int8, x[5].int8, x[6].int8, x[7].int8, x[8].int8, x[9].int8, x[10].int8, x[11].int8, x[12].int8, x[13].int8, x[14].int8, x[15].int8)
 ############################################
@@ -146,6 +151,7 @@ proc to_int8x16*[T = SIZE_TYPE](x: seq[T]): int8x16 =
 type uint16x8* {.header: simd, importcpp: "uint16<8>".} = object
 type mask_uint16x8* {.header: simd, importcpp: "mask_uint16<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: uint16): uint16x8 {.header: simd, importcpp: "make_uint<uint16<8>>(@)".}
+proc splat_uint16x8*(x: SIZE_TYPE): uint16x8 = Vector(x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16)
 proc to_mask*(x: uint16x8): mask_uint16x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint16x8): Natural = 8
 proc extract_0*(x: uint16x8): uint16  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -177,7 +183,7 @@ proc `[]`*(x: uint16x8, i: Natural): uint16 =
 proc to_seq*(x: uint16x8): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint16x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint16x8): string = "uint16x8"& $(x.to_array)
-proc to_uint16x8*[T = SIZE_TYPE](x: seq[T]): uint16x8 =
+proc to_uint16x8*(x: seq[SIZE_TYPE]): uint16x8 =
   assert x.len == 8 ###
   Vector(x[0].uint16, x[1].uint16, x[2].uint16, x[3].uint16, x[4].uint16, x[5].uint16, x[6].uint16, x[7].uint16)
 ############################################
@@ -189,6 +195,7 @@ proc to_uint16x8*[T = SIZE_TYPE](x: seq[T]): uint16x8 =
 type int16x8* {.header: simd, importcpp: "int16<8>".} = object
 type mask_int16x8* {.header: simd, importcpp: "mask_int16<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: int16): int16x8 {.header: simd, importcpp: "make_int<int16<8>>(@)".}
+proc splat_int16x8*(x: SIZE_TYPE): int16x8 = Vector(x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16)
 proc to_mask*(x: int16x8): mask_int16x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int16x8): Natural = 8
 proc extract_0*(x: int16x8): int16  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -220,7 +227,7 @@ proc `[]`*(x: int16x8, i: Natural): int16 =
 proc to_seq*(x: int16x8): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int16x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int16x8): string = "int16x8"& $(x.to_array)
-proc to_int16x8*[T = SIZE_TYPE](x: seq[T]): int16x8 =
+proc to_int16x8*(x: seq[SIZE_TYPE]): int16x8 =
   assert x.len == 8 ###
   Vector(x[0].int16, x[1].int16, x[2].int16, x[3].int16, x[4].int16, x[5].int16, x[6].int16, x[7].int16)
 ############################################
@@ -232,6 +239,7 @@ proc to_int16x8*[T = SIZE_TYPE](x: seq[T]): int16x8 =
 type uint32x4* {.header: simd, importcpp: "uint32<4>".} = object
 type mask_uint32x4* {.header: simd, importcpp: "mask_uint32<4>".} = object
 proc Vector*(x0, x1, x2, x3: uint32): uint32x4 {.header: simd, importcpp: "make_uint<uint32<4>>(@)".}
+proc splat_uint32x4*(x: SIZE_TYPE): uint32x4 = Vector(x.uint32, x.uint32, x.uint32, x.uint32)
 proc to_mask*(x: uint32x4): mask_uint32x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint32x4): Natural = 4
 proc extract_0*(x: uint32x4): uint32  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -251,7 +259,7 @@ proc `[]`*(x: uint32x4, i: Natural): uint32 =
 proc to_seq*(x: uint32x4): seq[uint32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: uint32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: uint32x4): string = "uint32x4"& $(x.to_array)
-proc to_uint32x4*[T = SIZE_TYPE](x: seq[T]): uint32x4 =
+proc to_uint32x4*(x: seq[SIZE_TYPE]): uint32x4 =
   assert x.len == 4 ###
   Vector(x[0].uint32, x[1].uint32, x[2].uint32, x[3].uint32)
 ############################################
@@ -263,6 +271,7 @@ proc to_uint32x4*[T = SIZE_TYPE](x: seq[T]): uint32x4 =
 type int32x4* {.header: simd, importcpp: "int32<4>".} = object
 type mask_int32x4* {.header: simd, importcpp: "mask_int32<4>".} = object
 proc Vector*(x0, x1, x2, x3: int32): int32x4 {.header: simd, importcpp: "make_int<int32<4>>(@)".}
+proc splat_int32x4*(x: SIZE_TYPE): int32x4 = Vector(x.int32, x.int32, x.int32, x.int32)
 proc to_mask*(x: int32x4): mask_int32x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int32x4): Natural = 4
 proc extract_0*(x: int32x4): int32  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -282,7 +291,7 @@ proc `[]`*(x: int32x4, i: Natural): int32 =
 proc to_seq*(x: int32x4): seq[int32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: int32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: int32x4): string = "int32x4"& $(x.to_array)
-proc to_int32x4*[T = SIZE_TYPE](x: seq[T]): int32x4 =
+proc to_int32x4*(x: seq[SIZE_TYPE]): int32x4 =
   assert x.len == 4 ###
   Vector(x[0].int32, x[1].int32, x[2].int32, x[3].int32)
 ############################################
@@ -294,6 +303,7 @@ proc to_int32x4*[T = SIZE_TYPE](x: seq[T]): int32x4 =
 type uint64x2* {.header: simd, importcpp: "uint64<2>".} = object
 type mask_uint64x2* {.header: simd, importcpp: "mask_uint64<2>".} = object
 proc Vector*(x0, x1: uint64): uint64x2 {.header: simd, importcpp: "make_uint<uint64<2>>(@)".}
+proc splat_uint64x2*(x: SIZE_TYPE): uint64x2 = Vector(x.uint64, x.uint64)
 proc to_mask*(x: uint64x2): mask_uint64x2 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint64x2): Natural = 2
 proc extract_0*(x: uint64x2): uint64  {.header: simd, importcpp: "extract<0, 2>(@)"}
@@ -307,7 +317,7 @@ proc `[]`*(x: uint64x2, i: Natural): uint64 =
 proc to_seq*(x: uint64x2): seq[uint64] = @[x[0], x[1]]
 proc to_array*(x: uint64x2): auto = [x[0], x[1]]
 proc `$`*(x: uint64x2): string = "uint64x2"& $(x.to_array)
-proc to_uint64x2*[T = SIZE_TYPE](x: seq[T]): uint64x2 =
+proc to_uint64x2*(x: seq[SIZE_TYPE]): uint64x2 =
   assert x.len == 2 ###
   Vector(x[0].uint64, x[1].uint64)
 ############################################
@@ -319,6 +329,7 @@ proc to_uint64x2*[T = SIZE_TYPE](x: seq[T]): uint64x2 =
 type int64x2* {.header: simd, importcpp: "int64<2>".} = object
 type mask_int64x2* {.header: simd, importcpp: "mask_int64<2>".} = object
 proc Vector*(x0, x1: int64): int64x2 {.header: simd, importcpp: "make_int<int64<2>>(@)".}
+proc splat_int64x2*(x: SIZE_TYPE): int64x2 = Vector(x.int64, x.int64)
 proc to_mask*(x: int64x2): mask_int64x2 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int64x2): Natural = 2
 proc extract_0*(x: int64x2): int64  {.header: simd, importcpp: "extract<0, 2>(@)"}
@@ -332,7 +343,7 @@ proc `[]`*(x: int64x2, i: Natural): int64 =
 proc to_seq*(x: int64x2): seq[int64] = @[x[0], x[1]]
 proc to_array*(x: int64x2): auto = [x[0], x[1]]
 proc `$`*(x: int64x2): string = "int64x2"& $(x.to_array)
-proc to_int64x2*[T = SIZE_TYPE](x: seq[T]): int64x2 =
+proc to_int64x2*(x: seq[SIZE_TYPE]): int64x2 =
   assert x.len == 2 ###
   Vector(x[0].int64, x[1].int64)
 ############################################
@@ -344,6 +355,7 @@ proc to_int64x2*[T = SIZE_TYPE](x: seq[T]): int64x2 =
 type float32x4* {.header: simd, importcpp: "float32<4>".} = object
 type mask_float32x4* {.header: simd, importcpp: "mask_float32<4>".} = object
 proc Vector*(x0, x1, x2, x3: float32): float32x4 {.header: simd, importcpp: "make_float<float32<4>>(@)".}
+proc splat_float32x4*(x: SIZE_TYPE): float32x4 = Vector(x.float32, x.float32, x.float32, x.float32)
 proc to_mask*(x: float32x4): mask_float32x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float32x4): Natural = 4
 proc extract_0*(x: float32x4): float32  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -363,7 +375,7 @@ proc `[]`*(x: float32x4, i: Natural): float32 =
 proc to_seq*(x: float32x4): seq[float32] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: float32x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: float32x4): string = "float32x4"& $(x.to_array)
-proc to_float32x4*[T = SIZE_TYPE](x: seq[T]): float32x4 =
+proc to_float32x4*(x: seq[SIZE_TYPE]): float32x4 =
   assert x.len == 4 ###
   Vector(x[0].float32, x[1].float32, x[2].float32, x[3].float32)
 ############################################
@@ -375,6 +387,7 @@ proc to_float32x4*[T = SIZE_TYPE](x: seq[T]): float32x4 =
 type float64x2* {.header: simd, importcpp: "float64<2>".} = object
 type mask_float64x2* {.header: simd, importcpp: "mask_float64<2>".} = object
 proc Vector*(x0, x1: float64): float64x2 {.header: simd, importcpp: "make_float<float64<2>>(@)".}
+proc splat_float64x2*(x: SIZE_TYPE): float64x2 = Vector(x.float64, x.float64)
 proc to_mask*(x: float64x2): mask_float64x2 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float64x2): Natural = 2
 proc extract_0*(x: float64x2): float64  {.header: simd, importcpp: "extract<0, 2>(@)"}
@@ -388,7 +401,7 @@ proc `[]`*(x: float64x2, i: Natural): float64 =
 proc to_seq*(x: float64x2): seq[float64] = @[x[0], x[1]]
 proc to_array*(x: float64x2): auto = [x[0], x[1]]
 proc `$`*(x: float64x2): string = "float64x2"& $(x.to_array)
-proc to_float64x2*[T = SIZE_TYPE](x: seq[T]): float64x2 =
+proc to_float64x2*(x: seq[SIZE_TYPE]): float64x2 =
   assert x.len == 2 ###
   Vector(x[0].float64, x[1].float64)
 ############################################
@@ -400,6 +413,7 @@ proc to_float64x2*[T = SIZE_TYPE](x: seq[T]): float64x2 =
 type uint8x32* {.header: simd, importcpp: "uint8<32>".} = object
 type mask_uint8x32* {.header: simd, importcpp: "mask_uint8<32>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31: uint8): uint8x32 {.header: simd, importcpp: "make_uint<uint8<32>>(@)".}
+proc splat_uint8x32*(x: SIZE_TYPE): uint8x32 = Vector(x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8)
 proc to_mask*(x: uint8x32): mask_uint8x32 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint8x32): Natural = 32
 proc extract_0*(x: uint8x32): uint8  {.header: simd, importcpp: "extract<0, 32>(@)"}
@@ -503,7 +517,7 @@ proc `[]`*(x: uint8x32, i: Natural): uint8 =
 proc to_seq*(x: uint8x32): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: uint8x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: uint8x32): string = "uint8x32"& $(x.to_array)
-proc to_uint8x32*[T = SIZE_TYPE](x: seq[T]): uint8x32 =
+proc to_uint8x32*(x: seq[SIZE_TYPE]): uint8x32 =
   assert x.len == 32 ###
   Vector(x[0].uint8, x[1].uint8, x[2].uint8, x[3].uint8, x[4].uint8, x[5].uint8, x[6].uint8, x[7].uint8, x[8].uint8, x[9].uint8, x[10].uint8, x[11].uint8, x[12].uint8, x[13].uint8, x[14].uint8, x[15].uint8, x[16].uint8, x[17].uint8, x[18].uint8, x[19].uint8, x[20].uint8, x[21].uint8, x[22].uint8, x[23].uint8, x[24].uint8, x[25].uint8, x[26].uint8, x[27].uint8, x[28].uint8, x[29].uint8, x[30].uint8, x[31].uint8)
 ############################################
@@ -515,6 +529,7 @@ proc to_uint8x32*[T = SIZE_TYPE](x: seq[T]): uint8x32 =
 type int8x32* {.header: simd, importcpp: "int8<32>".} = object
 type mask_int8x32* {.header: simd, importcpp: "mask_int8<32>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31: int8): int8x32 {.header: simd, importcpp: "make_int<int8<32>>(@)".}
+proc splat_int8x32*(x: SIZE_TYPE): int8x32 = Vector(x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8)
 proc to_mask*(x: int8x32): mask_int8x32 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int8x32): Natural = 32
 proc extract_0*(x: int8x32): int8  {.header: simd, importcpp: "extract<0, 32>(@)"}
@@ -618,7 +633,7 @@ proc `[]`*(x: int8x32, i: Natural): int8 =
 proc to_seq*(x: int8x32): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: int8x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: int8x32): string = "int8x32"& $(x.to_array)
-proc to_int8x32*[T = SIZE_TYPE](x: seq[T]): int8x32 =
+proc to_int8x32*(x: seq[SIZE_TYPE]): int8x32 =
   assert x.len == 32 ###
   Vector(x[0].int8, x[1].int8, x[2].int8, x[3].int8, x[4].int8, x[5].int8, x[6].int8, x[7].int8, x[8].int8, x[9].int8, x[10].int8, x[11].int8, x[12].int8, x[13].int8, x[14].int8, x[15].int8, x[16].int8, x[17].int8, x[18].int8, x[19].int8, x[20].int8, x[21].int8, x[22].int8, x[23].int8, x[24].int8, x[25].int8, x[26].int8, x[27].int8, x[28].int8, x[29].int8, x[30].int8, x[31].int8)
 ############################################
@@ -630,6 +645,7 @@ proc to_int8x32*[T = SIZE_TYPE](x: seq[T]): int8x32 =
 type uint16x16* {.header: simd, importcpp: "uint16<16>".} = object
 type mask_uint16x16* {.header: simd, importcpp: "mask_uint16<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: uint16): uint16x16 {.header: simd, importcpp: "make_uint<uint16<16>>(@)".}
+proc splat_uint16x16*(x: SIZE_TYPE): uint16x16 = Vector(x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16)
 proc to_mask*(x: uint16x16): mask_uint16x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint16x16): Natural = 16
 proc extract_0*(x: uint16x16): uint16  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -685,7 +701,7 @@ proc `[]`*(x: uint16x16, i: Natural): uint16 =
 proc to_seq*(x: uint16x16): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint16x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint16x16): string = "uint16x16"& $(x.to_array)
-proc to_uint16x16*[T = SIZE_TYPE](x: seq[T]): uint16x16 =
+proc to_uint16x16*(x: seq[SIZE_TYPE]): uint16x16 =
   assert x.len == 16 ###
   Vector(x[0].uint16, x[1].uint16, x[2].uint16, x[3].uint16, x[4].uint16, x[5].uint16, x[6].uint16, x[7].uint16, x[8].uint16, x[9].uint16, x[10].uint16, x[11].uint16, x[12].uint16, x[13].uint16, x[14].uint16, x[15].uint16)
 ############################################
@@ -697,6 +713,7 @@ proc to_uint16x16*[T = SIZE_TYPE](x: seq[T]): uint16x16 =
 type int16x16* {.header: simd, importcpp: "int16<16>".} = object
 type mask_int16x16* {.header: simd, importcpp: "mask_int16<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: int16): int16x16 {.header: simd, importcpp: "make_int<int16<16>>(@)".}
+proc splat_int16x16*(x: SIZE_TYPE): int16x16 = Vector(x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16)
 proc to_mask*(x: int16x16): mask_int16x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int16x16): Natural = 16
 proc extract_0*(x: int16x16): int16  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -752,7 +769,7 @@ proc `[]`*(x: int16x16, i: Natural): int16 =
 proc to_seq*(x: int16x16): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int16x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int16x16): string = "int16x16"& $(x.to_array)
-proc to_int16x16*[T = SIZE_TYPE](x: seq[T]): int16x16 =
+proc to_int16x16*(x: seq[SIZE_TYPE]): int16x16 =
   assert x.len == 16 ###
   Vector(x[0].int16, x[1].int16, x[2].int16, x[3].int16, x[4].int16, x[5].int16, x[6].int16, x[7].int16, x[8].int16, x[9].int16, x[10].int16, x[11].int16, x[12].int16, x[13].int16, x[14].int16, x[15].int16)
 ############################################
@@ -764,6 +781,7 @@ proc to_int16x16*[T = SIZE_TYPE](x: seq[T]): int16x16 =
 type uint32x8* {.header: simd, importcpp: "uint32<8>".} = object
 type mask_uint32x8* {.header: simd, importcpp: "mask_uint32<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: uint32): uint32x8 {.header: simd, importcpp: "make_uint<uint32<8>>(@)".}
+proc splat_uint32x8*(x: SIZE_TYPE): uint32x8 = Vector(x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32)
 proc to_mask*(x: uint32x8): mask_uint32x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint32x8): Natural = 8
 proc extract_0*(x: uint32x8): uint32  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -795,7 +813,7 @@ proc `[]`*(x: uint32x8, i: Natural): uint32 =
 proc to_seq*(x: uint32x8): seq[uint32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint32x8): string = "uint32x8"& $(x.to_array)
-proc to_uint32x8*[T = SIZE_TYPE](x: seq[T]): uint32x8 =
+proc to_uint32x8*(x: seq[SIZE_TYPE]): uint32x8 =
   assert x.len == 8 ###
   Vector(x[0].uint32, x[1].uint32, x[2].uint32, x[3].uint32, x[4].uint32, x[5].uint32, x[6].uint32, x[7].uint32)
 ############################################
@@ -807,6 +825,7 @@ proc to_uint32x8*[T = SIZE_TYPE](x: seq[T]): uint32x8 =
 type int32x8* {.header: simd, importcpp: "int32<8>".} = object
 type mask_int32x8* {.header: simd, importcpp: "mask_int32<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: int32): int32x8 {.header: simd, importcpp: "make_int<int32<8>>(@)".}
+proc splat_int32x8*(x: SIZE_TYPE): int32x8 = Vector(x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32)
 proc to_mask*(x: int32x8): mask_int32x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int32x8): Natural = 8
 proc extract_0*(x: int32x8): int32  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -838,7 +857,7 @@ proc `[]`*(x: int32x8, i: Natural): int32 =
 proc to_seq*(x: int32x8): seq[int32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int32x8): string = "int32x8"& $(x.to_array)
-proc to_int32x8*[T = SIZE_TYPE](x: seq[T]): int32x8 =
+proc to_int32x8*(x: seq[SIZE_TYPE]): int32x8 =
   assert x.len == 8 ###
   Vector(x[0].int32, x[1].int32, x[2].int32, x[3].int32, x[4].int32, x[5].int32, x[6].int32, x[7].int32)
 ############################################
@@ -850,6 +869,7 @@ proc to_int32x8*[T = SIZE_TYPE](x: seq[T]): int32x8 =
 type uint64x4* {.header: simd, importcpp: "uint64<4>".} = object
 type mask_uint64x4* {.header: simd, importcpp: "mask_uint64<4>".} = object
 proc Vector*(x0, x1, x2, x3: uint64): uint64x4 {.header: simd, importcpp: "make_uint<uint64<4>>(@)".}
+proc splat_uint64x4*(x: SIZE_TYPE): uint64x4 = Vector(x.uint64, x.uint64, x.uint64, x.uint64)
 proc to_mask*(x: uint64x4): mask_uint64x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint64x4): Natural = 4
 proc extract_0*(x: uint64x4): uint64  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -869,7 +889,7 @@ proc `[]`*(x: uint64x4, i: Natural): uint64 =
 proc to_seq*(x: uint64x4): seq[uint64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: uint64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: uint64x4): string = "uint64x4"& $(x.to_array)
-proc to_uint64x4*[T = SIZE_TYPE](x: seq[T]): uint64x4 =
+proc to_uint64x4*(x: seq[SIZE_TYPE]): uint64x4 =
   assert x.len == 4 ###
   Vector(x[0].uint64, x[1].uint64, x[2].uint64, x[3].uint64)
 ############################################
@@ -881,6 +901,7 @@ proc to_uint64x4*[T = SIZE_TYPE](x: seq[T]): uint64x4 =
 type int64x4* {.header: simd, importcpp: "int64<4>".} = object
 type mask_int64x4* {.header: simd, importcpp: "mask_int64<4>".} = object
 proc Vector*(x0, x1, x2, x3: int64): int64x4 {.header: simd, importcpp: "make_int<int64<4>>(@)".}
+proc splat_int64x4*(x: SIZE_TYPE): int64x4 = Vector(x.int64, x.int64, x.int64, x.int64)
 proc to_mask*(x: int64x4): mask_int64x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int64x4): Natural = 4
 proc extract_0*(x: int64x4): int64  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -900,7 +921,7 @@ proc `[]`*(x: int64x4, i: Natural): int64 =
 proc to_seq*(x: int64x4): seq[int64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: int64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: int64x4): string = "int64x4"& $(x.to_array)
-proc to_int64x4*[T = SIZE_TYPE](x: seq[T]): int64x4 =
+proc to_int64x4*(x: seq[SIZE_TYPE]): int64x4 =
   assert x.len == 4 ###
   Vector(x[0].int64, x[1].int64, x[2].int64, x[3].int64)
 ############################################
@@ -912,6 +933,7 @@ proc to_int64x4*[T = SIZE_TYPE](x: seq[T]): int64x4 =
 type float32x8* {.header: simd, importcpp: "float32<8>".} = object
 type mask_float32x8* {.header: simd, importcpp: "mask_float32<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: float32): float32x8 {.header: simd, importcpp: "make_float<float32<8>>(@)".}
+proc splat_float32x8*(x: SIZE_TYPE): float32x8 = Vector(x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32)
 proc to_mask*(x: float32x8): mask_float32x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float32x8): Natural = 8
 proc extract_0*(x: float32x8): float32  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -943,7 +965,7 @@ proc `[]`*(x: float32x8, i: Natural): float32 =
 proc to_seq*(x: float32x8): seq[float32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: float32x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: float32x8): string = "float32x8"& $(x.to_array)
-proc to_float32x8*[T = SIZE_TYPE](x: seq[T]): float32x8 =
+proc to_float32x8*(x: seq[SIZE_TYPE]): float32x8 =
   assert x.len == 8 ###
   Vector(x[0].float32, x[1].float32, x[2].float32, x[3].float32, x[4].float32, x[5].float32, x[6].float32, x[7].float32)
 ############################################
@@ -955,6 +977,7 @@ proc to_float32x8*[T = SIZE_TYPE](x: seq[T]): float32x8 =
 type float64x4* {.header: simd, importcpp: "float64<4>".} = object
 type mask_float64x4* {.header: simd, importcpp: "mask_float64<4>".} = object
 proc Vector*(x0, x1, x2, x3: float64): float64x4 {.header: simd, importcpp: "make_float<float64<4>>(@)".}
+proc splat_float64x4*(x: SIZE_TYPE): float64x4 = Vector(x.float64, x.float64, x.float64, x.float64)
 proc to_mask*(x: float64x4): mask_float64x4 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float64x4): Natural = 4
 proc extract_0*(x: float64x4): float64  {.header: simd, importcpp: "extract<0, 4>(@)"}
@@ -974,7 +997,7 @@ proc `[]`*(x: float64x4, i: Natural): float64 =
 proc to_seq*(x: float64x4): seq[float64] = @[x[0], x[1], x[2], x[3]]
 proc to_array*(x: float64x4): auto = [x[0], x[1], x[2], x[3]]
 proc `$`*(x: float64x4): string = "float64x4"& $(x.to_array)
-proc to_float64x4*[T = SIZE_TYPE](x: seq[T]): float64x4 =
+proc to_float64x4*(x: seq[SIZE_TYPE]): float64x4 =
   assert x.len == 4 ###
   Vector(x[0].float64, x[1].float64, x[2].float64, x[3].float64)
 ############################################
@@ -986,6 +1009,7 @@ proc to_float64x4*[T = SIZE_TYPE](x: seq[T]): float64x4 =
 type uint8x64* {.header: simd, importcpp: "uint8<64>".} = object
 type mask_uint8x64* {.header: simd, importcpp: "mask_uint8<64>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x59, x60, x61, x62, x63: uint8): uint8x64 {.header: simd, importcpp: "make_uint<uint8<64>>(@)".}
+proc splat_uint8x64*(x: SIZE_TYPE): uint8x64 = Vector(x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8, x.uint8)
 proc to_mask*(x: uint8x64): mask_uint8x64 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint8x64): Natural = 64
 proc extract_0*(x: uint8x64): uint8  {.header: simd, importcpp: "extract<0, 64>(@)"}
@@ -1185,7 +1209,7 @@ proc `[]`*(x: uint8x64, i: Natural): uint8 =
 proc to_seq*(x: uint8x64): seq[uint8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc to_array*(x: uint8x64): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc `$`*(x: uint8x64): string = "uint8x64"& $(x.to_array)
-proc to_uint8x64*[T = SIZE_TYPE](x: seq[T]): uint8x64 =
+proc to_uint8x64*(x: seq[SIZE_TYPE]): uint8x64 =
   assert x.len == 64 ###
   Vector(x[0].uint8, x[1].uint8, x[2].uint8, x[3].uint8, x[4].uint8, x[5].uint8, x[6].uint8, x[7].uint8, x[8].uint8, x[9].uint8, x[10].uint8, x[11].uint8, x[12].uint8, x[13].uint8, x[14].uint8, x[15].uint8, x[16].uint8, x[17].uint8, x[18].uint8, x[19].uint8, x[20].uint8, x[21].uint8, x[22].uint8, x[23].uint8, x[24].uint8, x[25].uint8, x[26].uint8, x[27].uint8, x[28].uint8, x[29].uint8, x[30].uint8, x[31].uint8, x[32].uint8, x[33].uint8, x[34].uint8, x[35].uint8, x[36].uint8, x[37].uint8, x[38].uint8, x[39].uint8, x[40].uint8, x[41].uint8, x[42].uint8, x[43].uint8, x[44].uint8, x[45].uint8, x[46].uint8, x[47].uint8, x[48].uint8, x[49].uint8, x[50].uint8, x[51].uint8, x[52].uint8, x[53].uint8, x[54].uint8, x[55].uint8, x[56].uint8, x[57].uint8, x[58].uint8, x[59].uint8, x[60].uint8, x[61].uint8, x[62].uint8, x[63].uint8)
 ############################################
@@ -1197,6 +1221,7 @@ proc to_uint8x64*[T = SIZE_TYPE](x: seq[T]): uint8x64 =
 type int8x64* {.header: simd, importcpp: "int8<64>".} = object
 type mask_int8x64* {.header: simd, importcpp: "mask_int8<64>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x59, x60, x61, x62, x63: int8): int8x64 {.header: simd, importcpp: "make_int<int8<64>>(@)".}
+proc splat_int8x64*(x: SIZE_TYPE): int8x64 = Vector(x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8, x.int8)
 proc to_mask*(x: int8x64): mask_int8x64 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int8x64): Natural = 64
 proc extract_0*(x: int8x64): int8  {.header: simd, importcpp: "extract<0, 64>(@)"}
@@ -1396,7 +1421,7 @@ proc `[]`*(x: int8x64, i: Natural): int8 =
 proc to_seq*(x: int8x64): seq[int8] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc to_array*(x: int8x64): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31], x[32], x[33], x[34], x[35], x[36], x[37], x[38], x[39], x[40], x[41], x[42], x[43], x[44], x[45], x[46], x[47], x[48], x[49], x[50], x[51], x[52], x[53], x[54], x[55], x[56], x[57], x[58], x[59], x[60], x[61], x[62], x[63]]
 proc `$`*(x: int8x64): string = "int8x64"& $(x.to_array)
-proc to_int8x64*[T = SIZE_TYPE](x: seq[T]): int8x64 =
+proc to_int8x64*(x: seq[SIZE_TYPE]): int8x64 =
   assert x.len == 64 ###
   Vector(x[0].int8, x[1].int8, x[2].int8, x[3].int8, x[4].int8, x[5].int8, x[6].int8, x[7].int8, x[8].int8, x[9].int8, x[10].int8, x[11].int8, x[12].int8, x[13].int8, x[14].int8, x[15].int8, x[16].int8, x[17].int8, x[18].int8, x[19].int8, x[20].int8, x[21].int8, x[22].int8, x[23].int8, x[24].int8, x[25].int8, x[26].int8, x[27].int8, x[28].int8, x[29].int8, x[30].int8, x[31].int8, x[32].int8, x[33].int8, x[34].int8, x[35].int8, x[36].int8, x[37].int8, x[38].int8, x[39].int8, x[40].int8, x[41].int8, x[42].int8, x[43].int8, x[44].int8, x[45].int8, x[46].int8, x[47].int8, x[48].int8, x[49].int8, x[50].int8, x[51].int8, x[52].int8, x[53].int8, x[54].int8, x[55].int8, x[56].int8, x[57].int8, x[58].int8, x[59].int8, x[60].int8, x[61].int8, x[62].int8, x[63].int8)
 ############################################
@@ -1408,6 +1433,7 @@ proc to_int8x64*[T = SIZE_TYPE](x: seq[T]): int8x64 =
 type uint16x32* {.header: simd, importcpp: "uint16<32>".} = object
 type mask_uint16x32* {.header: simd, importcpp: "mask_uint16<32>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31: uint16): uint16x32 {.header: simd, importcpp: "make_uint<uint16<32>>(@)".}
+proc splat_uint16x32*(x: SIZE_TYPE): uint16x32 = Vector(x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16, x.uint16)
 proc to_mask*(x: uint16x32): mask_uint16x32 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint16x32): Natural = 32
 proc extract_0*(x: uint16x32): uint16  {.header: simd, importcpp: "extract<0, 32>(@)"}
@@ -1511,7 +1537,7 @@ proc `[]`*(x: uint16x32, i: Natural): uint16 =
 proc to_seq*(x: uint16x32): seq[uint16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: uint16x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: uint16x32): string = "uint16x32"& $(x.to_array)
-proc to_uint16x32*[T = SIZE_TYPE](x: seq[T]): uint16x32 =
+proc to_uint16x32*(x: seq[SIZE_TYPE]): uint16x32 =
   assert x.len == 32 ###
   Vector(x[0].uint16, x[1].uint16, x[2].uint16, x[3].uint16, x[4].uint16, x[5].uint16, x[6].uint16, x[7].uint16, x[8].uint16, x[9].uint16, x[10].uint16, x[11].uint16, x[12].uint16, x[13].uint16, x[14].uint16, x[15].uint16, x[16].uint16, x[17].uint16, x[18].uint16, x[19].uint16, x[20].uint16, x[21].uint16, x[22].uint16, x[23].uint16, x[24].uint16, x[25].uint16, x[26].uint16, x[27].uint16, x[28].uint16, x[29].uint16, x[30].uint16, x[31].uint16)
 ############################################
@@ -1523,6 +1549,7 @@ proc to_uint16x32*[T = SIZE_TYPE](x: seq[T]): uint16x32 =
 type int16x32* {.header: simd, importcpp: "int16<32>".} = object
 type mask_int16x32* {.header: simd, importcpp: "mask_int16<32>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31: int16): int16x32 {.header: simd, importcpp: "make_int<int16<32>>(@)".}
+proc splat_int16x32*(x: SIZE_TYPE): int16x32 = Vector(x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16, x.int16)
 proc to_mask*(x: int16x32): mask_int16x32 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int16x32): Natural = 32
 proc extract_0*(x: int16x32): int16  {.header: simd, importcpp: "extract<0, 32>(@)"}
@@ -1626,7 +1653,7 @@ proc `[]`*(x: int16x32, i: Natural): int16 =
 proc to_seq*(x: int16x32): seq[int16] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc to_array*(x: int16x32): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15], x[16], x[17], x[18], x[19], x[20], x[21], x[22], x[23], x[24], x[25], x[26], x[27], x[28], x[29], x[30], x[31]]
 proc `$`*(x: int16x32): string = "int16x32"& $(x.to_array)
-proc to_int16x32*[T = SIZE_TYPE](x: seq[T]): int16x32 =
+proc to_int16x32*(x: seq[SIZE_TYPE]): int16x32 =
   assert x.len == 32 ###
   Vector(x[0].int16, x[1].int16, x[2].int16, x[3].int16, x[4].int16, x[5].int16, x[6].int16, x[7].int16, x[8].int16, x[9].int16, x[10].int16, x[11].int16, x[12].int16, x[13].int16, x[14].int16, x[15].int16, x[16].int16, x[17].int16, x[18].int16, x[19].int16, x[20].int16, x[21].int16, x[22].int16, x[23].int16, x[24].int16, x[25].int16, x[26].int16, x[27].int16, x[28].int16, x[29].int16, x[30].int16, x[31].int16)
 ############################################
@@ -1638,6 +1665,7 @@ proc to_int16x32*[T = SIZE_TYPE](x: seq[T]): int16x32 =
 type uint32x16* {.header: simd, importcpp: "uint32<16>".} = object
 type mask_uint32x16* {.header: simd, importcpp: "mask_uint32<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: uint32): uint32x16 {.header: simd, importcpp: "make_uint<uint32<16>>(@)".}
+proc splat_uint32x16*(x: SIZE_TYPE): uint32x16 = Vector(x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32, x.uint32)
 proc to_mask*(x: uint32x16): mask_uint32x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint32x16): Natural = 16
 proc extract_0*(x: uint32x16): uint32  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -1693,7 +1721,7 @@ proc `[]`*(x: uint32x16, i: Natural): uint32 =
 proc to_seq*(x: uint32x16): seq[uint32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: uint32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: uint32x16): string = "uint32x16"& $(x.to_array)
-proc to_uint32x16*[T = SIZE_TYPE](x: seq[T]): uint32x16 =
+proc to_uint32x16*(x: seq[SIZE_TYPE]): uint32x16 =
   assert x.len == 16 ###
   Vector(x[0].uint32, x[1].uint32, x[2].uint32, x[3].uint32, x[4].uint32, x[5].uint32, x[6].uint32, x[7].uint32, x[8].uint32, x[9].uint32, x[10].uint32, x[11].uint32, x[12].uint32, x[13].uint32, x[14].uint32, x[15].uint32)
 ############################################
@@ -1705,6 +1733,7 @@ proc to_uint32x16*[T = SIZE_TYPE](x: seq[T]): uint32x16 =
 type int32x16* {.header: simd, importcpp: "int32<16>".} = object
 type mask_int32x16* {.header: simd, importcpp: "mask_int32<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: int32): int32x16 {.header: simd, importcpp: "make_int<int32<16>>(@)".}
+proc splat_int32x16*(x: SIZE_TYPE): int32x16 = Vector(x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32, x.int32)
 proc to_mask*(x: int32x16): mask_int32x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int32x16): Natural = 16
 proc extract_0*(x: int32x16): int32  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -1760,7 +1789,7 @@ proc `[]`*(x: int32x16, i: Natural): int32 =
 proc to_seq*(x: int32x16): seq[int32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: int32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: int32x16): string = "int32x16"& $(x.to_array)
-proc to_int32x16*[T = SIZE_TYPE](x: seq[T]): int32x16 =
+proc to_int32x16*(x: seq[SIZE_TYPE]): int32x16 =
   assert x.len == 16 ###
   Vector(x[0].int32, x[1].int32, x[2].int32, x[3].int32, x[4].int32, x[5].int32, x[6].int32, x[7].int32, x[8].int32, x[9].int32, x[10].int32, x[11].int32, x[12].int32, x[13].int32, x[14].int32, x[15].int32)
 ############################################
@@ -1772,6 +1801,7 @@ proc to_int32x16*[T = SIZE_TYPE](x: seq[T]): int32x16 =
 type uint64x8* {.header: simd, importcpp: "uint64<8>".} = object
 type mask_uint64x8* {.header: simd, importcpp: "mask_uint64<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: uint64): uint64x8 {.header: simd, importcpp: "make_uint<uint64<8>>(@)".}
+proc splat_uint64x8*(x: SIZE_TYPE): uint64x8 = Vector(x.uint64, x.uint64, x.uint64, x.uint64, x.uint64, x.uint64, x.uint64, x.uint64)
 proc to_mask*(x: uint64x8): mask_uint64x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: uint64x8): Natural = 8
 proc extract_0*(x: uint64x8): uint64  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -1803,7 +1833,7 @@ proc `[]`*(x: uint64x8, i: Natural): uint64 =
 proc to_seq*(x: uint64x8): seq[uint64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: uint64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: uint64x8): string = "uint64x8"& $(x.to_array)
-proc to_uint64x8*[T = SIZE_TYPE](x: seq[T]): uint64x8 =
+proc to_uint64x8*(x: seq[SIZE_TYPE]): uint64x8 =
   assert x.len == 8 ###
   Vector(x[0].uint64, x[1].uint64, x[2].uint64, x[3].uint64, x[4].uint64, x[5].uint64, x[6].uint64, x[7].uint64)
 ############################################
@@ -1815,6 +1845,7 @@ proc to_uint64x8*[T = SIZE_TYPE](x: seq[T]): uint64x8 =
 type int64x8* {.header: simd, importcpp: "int64<8>".} = object
 type mask_int64x8* {.header: simd, importcpp: "mask_int64<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: int64): int64x8 {.header: simd, importcpp: "make_int<int64<8>>(@)".}
+proc splat_int64x8*(x: SIZE_TYPE): int64x8 = Vector(x.int64, x.int64, x.int64, x.int64, x.int64, x.int64, x.int64, x.int64)
 proc to_mask*(x: int64x8): mask_int64x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: int64x8): Natural = 8
 proc extract_0*(x: int64x8): int64  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -1846,7 +1877,7 @@ proc `[]`*(x: int64x8, i: Natural): int64 =
 proc to_seq*(x: int64x8): seq[int64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: int64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: int64x8): string = "int64x8"& $(x.to_array)
-proc to_int64x8*[T = SIZE_TYPE](x: seq[T]): int64x8 =
+proc to_int64x8*(x: seq[SIZE_TYPE]): int64x8 =
   assert x.len == 8 ###
   Vector(x[0].int64, x[1].int64, x[2].int64, x[3].int64, x[4].int64, x[5].int64, x[6].int64, x[7].int64)
 ############################################
@@ -1858,6 +1889,7 @@ proc to_int64x8*[T = SIZE_TYPE](x: seq[T]): int64x8 =
 type float32x16* {.header: simd, importcpp: "float32<16>".} = object
 type mask_float32x16* {.header: simd, importcpp: "mask_float32<16>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15: float32): float32x16 {.header: simd, importcpp: "make_float<float32<16>>(@)".}
+proc splat_float32x16*(x: SIZE_TYPE): float32x16 = Vector(x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32, x.float32)
 proc to_mask*(x: float32x16): mask_float32x16 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float32x16): Natural = 16
 proc extract_0*(x: float32x16): float32  {.header: simd, importcpp: "extract<0, 16>(@)"}
@@ -1913,7 +1945,7 @@ proc `[]`*(x: float32x16, i: Natural): float32 =
 proc to_seq*(x: float32x16): seq[float32] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc to_array*(x: float32x16): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]]
 proc `$`*(x: float32x16): string = "float32x16"& $(x.to_array)
-proc to_float32x16*[T = SIZE_TYPE](x: seq[T]): float32x16 =
+proc to_float32x16*(x: seq[SIZE_TYPE]): float32x16 =
   assert x.len == 16 ###
   Vector(x[0].float32, x[1].float32, x[2].float32, x[3].float32, x[4].float32, x[5].float32, x[6].float32, x[7].float32, x[8].float32, x[9].float32, x[10].float32, x[11].float32, x[12].float32, x[13].float32, x[14].float32, x[15].float32)
 ############################################
@@ -1925,6 +1957,7 @@ proc to_float32x16*[T = SIZE_TYPE](x: seq[T]): float32x16 =
 type float64x8* {.header: simd, importcpp: "float64<8>".} = object
 type mask_float64x8* {.header: simd, importcpp: "mask_float64<8>".} = object
 proc Vector*(x0, x1, x2, x3, x4, x5, x6, x7: float64): float64x8 {.header: simd, importcpp: "make_float<float64<8>>(@)".}
+proc splat_float64x8*(x: SIZE_TYPE): float64x8 = Vector(x.float64, x.float64, x.float64, x.float64, x.float64, x.float64, x.float64, x.float64)
 proc to_mask*(x: float64x8): mask_float64x8 {.header: simd, importcpp: "@.to_mask()".}
 proc len*(x: float64x8): Natural = 8
 proc extract_0*(x: float64x8): float64  {.header: simd, importcpp: "extract<0, 8>(@)"}
@@ -1956,7 +1989,7 @@ proc `[]`*(x: float64x8, i: Natural): float64 =
 proc to_seq*(x: float64x8): seq[float64] = @[x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc to_array*(x: float64x8): auto = [x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]]
 proc `$`*(x: float64x8): string = "float64x8"& $(x.to_array)
-proc to_float64x8*[T = SIZE_TYPE](x: seq[T]): float64x8 =
+proc to_float64x8*(x: seq[SIZE_TYPE]): float64x8 =
   assert x.len == 8 ###
   Vector(x[0].float64, x[1].float64, x[2].float64, x[3].float64, x[4].float64, x[5].float64, x[6].float64, x[7].float64)
 ############################################
@@ -3228,13 +3261,3 @@ proc shift_r*(x: uint64x2): uint64x2  {.header: simd, importcpp: "shift_r(@)"}
 proc `>>`*(x: uint64x2): uint64x2  {.header: simd, importcpp: "shift_r(@)"}
 proc shift_r*(x: uint64x4): uint64x4  {.header: simd, importcpp: "shift_r(@)"}
 proc `>>`*(x: uint64x4): uint64x4  {.header: simd, importcpp: "shift_r(@)"}
-
-
-let 
-  x = Vector(1.float32, 2, 3, 4)
-  y = Vector(4.float32, 3, 2, 1)
-  z = x * y / x
-
-echo z
-echo x
-echo y.min(x)

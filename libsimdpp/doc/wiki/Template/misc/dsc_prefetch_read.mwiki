@@ -1,1 +1,0 @@
-{{dsc fun | misc/prefetch_read | prefetches data to lowest level cache for reading }}
