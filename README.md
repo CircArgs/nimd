@@ -37,7 +37,7 @@ We can build projects derivative of `NIMD` by using the following [nim compiler]
 **Note:** you could also add these to a `config.nims`
 
 ### Example:
-`nim cpp --nimcache:./cache -t:"-I/home/nick/Projects/testnimd/libsimdpp" -r src/testnimd.nim `
+`nim cpp -t:"-I/home/nick/Projects/testnimd/libsimdpp" -r src/testnimd.nim `
 
 # Types
 NIMD supports the following vector types
