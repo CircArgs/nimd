@@ -32,10 +32,12 @@ You will also need [libsimdpp](https://github.com/p12tic/libsimdpp) (As of this 
 We can build projects derivative of `NIMD` by using the following [nim compiler](https://nim-lang.org/docs/nimc.html) flags:
 
 - `cpp`: use the c++ backend
-- `-d:libsimdpppath=MY_LIBSIMDPP_PATH`: a NIMD compile-time flag to state where `libsimdpp` is located
+- `-t:-I$MY_LIBSIMDPP_PATH`: a NIMD compile-time flag to state where `libsimdpp` is located
+
+**Note:** you could also add these to a `config.nims`
 
 ### Example:
-`nim cpp -d:libsimdpppath="-I/home/nick/Projects/nimd/libsimdpp" my_project.nim`
+`nim cpp --nimcache:./cache -t:"-I/home/nick/Projects/testnimd/libsimdpp" -r src/testnimd.nim `
 
 # Types
 NIMD supports the following vector types
