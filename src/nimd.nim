@@ -3599,10 +3599,6 @@ proc bit_and*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "s
 proc `&`*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc `&`*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc `&`*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: int8x32, y: int8x32): int8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
@@ -3619,10 +3615,6 @@ proc bit_and*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "s
 proc `&`*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc `&`*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc `&`*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: int8x64, y: int8x64): int8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
@@ -3639,70 +3631,6 @@ proc bit_and*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "s
 proc `&`*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_and*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc `&`*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc bit_and*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
-proc `&`*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_and(@)"}
 proc bit_andnot*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int8x16, y: int8x16): int8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
@@ -3719,10 +3647,6 @@ proc bit_andnot*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp:
 proc `&~`*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int8x32, y: int8x32): int8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
@@ -3739,10 +3663,6 @@ proc bit_andnot*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp:
 proc `&~`*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int8x64, y: int8x64): int8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
@@ -3759,70 +3679,6 @@ proc bit_andnot*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp:
 proc `&~`*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_andnot*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc `&~`*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc bit_andnot*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
-proc `&~`*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_andnot(@)"}
 proc bit_or*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int8x16, y: int8x16): int8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
@@ -3839,10 +3695,6 @@ proc bit_or*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "si
 proc `|`*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int8x32, y: int8x32): int8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
@@ -3859,10 +3711,6 @@ proc bit_or*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "si
 proc `|`*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int8x64, y: int8x64): int8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
@@ -3879,70 +3727,6 @@ proc bit_or*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "si
 proc `|`*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_or*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc `|`*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc bit_or*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
-proc `|`*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_or(@)"}
 proc bit_xor*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: uint8x16, y: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int8x16, y: int8x16): int8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
@@ -3959,10 +3743,6 @@ proc bit_xor*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "s
 proc `^`*(x: uint64x2, y: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: int64x2, y: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: uint8x32, y: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int8x32, y: int8x32): int8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
@@ -3979,10 +3759,6 @@ proc bit_xor*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "s
 proc `^`*(x: uint64x4, y: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: int64x4, y: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: uint8x64, y: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int8x64, y: int8x64): int8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
@@ -3999,70 +3775,6 @@ proc bit_xor*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "s
 proc `^`*(x: uint64x8, y: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_xor*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc `^`*(x: int64x8, y: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint8x16, y: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int8x16, y: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint16x8, y: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int16x8, y: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint32x4, y: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int32x4, y: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint64x2, y: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int64x2, y: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float32x4, y: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float64x2, y: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint8x32, y: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int8x32, y: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint16x16, y: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int16x16, y: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint32x8, y: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int32x8, y: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint64x4, y: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int64x4, y: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float32x8, y: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float64x4, y: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint8x64, y: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int8x64, y: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint16x32, y: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int16x32, y: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint32x16, y: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int32x16, y: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_uint64x8, y: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_int64x8, y: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float32x16, y: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc bit_xor*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
-proc `^`*(x: mask_float64x8, y: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_xor(@)"}
 proc bit_not*(x: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: uint8x16): uint8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int8x16): int8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
@@ -4079,10 +3791,6 @@ proc bit_not*(x: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_no
 proc `~`*(x: uint64x2): uint64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: int64x2): int64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float32x4): float32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float64x2): float64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: uint8x32): uint8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int8x32): int8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
@@ -4099,10 +3807,6 @@ proc bit_not*(x: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_no
 proc `~`*(x: uint64x4): uint64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: int64x4): int64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float32x8): float32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float64x4): float64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: uint8x64): uint8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int8x64): int8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
@@ -4119,70 +3823,6 @@ proc bit_not*(x: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_no
 proc `~`*(x: uint64x8): uint64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc bit_not*(x: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc `~`*(x: int64x8): int64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float32x16): float32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: float64x8): float64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint8x16): mask_uint8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint16x8): mask_uint16x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int16x8): mask_int16x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint32x4): mask_uint32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int32x4): mask_int32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint64x2): mask_uint64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int64x2): mask_int64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float32x4): mask_float32x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float64x2): mask_float64x2  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint8x32): mask_uint8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint16x16): mask_uint16x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int16x16): mask_int16x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint32x8): mask_uint32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int32x8): mask_int32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint64x4): mask_uint64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int64x4): mask_int64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float32x8): mask_float32x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float64x4): mask_float64x4  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint8x64): mask_uint8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int8x64): mask_int8x64  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint16x32): mask_uint16x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int16x32): mask_int16x32  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint32x16): mask_uint32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int32x16): mask_int32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_uint64x8): mask_uint64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_int64x8): mask_int64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float32x16): mask_float32x16  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc bit_not*(x: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
-proc `~`*(x: mask_float64x8): mask_float64x8  {.header: simd, importcpp: "simdpp::bit_not(@)"}
 proc add*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::add(@)"}
 proc `+`*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::add(@)"}
 proc add*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::add(@)"}
@@ -4231,24 +3871,42 @@ proc divide*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: 
 proc `/`*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::div(@)"}
 proc divide*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::div(@)"}
 proc `/`*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::div(@)"}
-proc fmadd*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmadd*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmadd*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmadd*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmadd*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmadd*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
-proc fmsub*(x: float32x8, y: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
-proc fmsub*(x: float32x16, y: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmsub(@)"}
-proc fmsub*(x: float32x4, y: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
-proc fmsub*(x: float64x8, y: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
-proc fmsub*(x: float64x2, y: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmsub(@)"}
-proc fmsub*(x: float64x4, y: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmadd*(x: float32x8, y: float32x8, z: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float32x8, y: float32x8, z: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmadd*(x: float32x16, y: float32x16, z: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float32x16, y: float32x16, z: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmadd*(x: float32x4, y: float32x4, z: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float32x4, y: float32x4, z: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmadd*(x: float64x8, y: float64x8, z: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float64x8, y: float64x8, z: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmadd*(x: float64x2, y: float64x2, z: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float64x2, y: float64x2, z: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmadd*(x: float64x4, y: float64x4, z: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc `*+`*(x: float64x4, y: float64x4, z: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmadd(@)"}
+proc fmsub*(x: float32x8, y: float32x8, z: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float32x8, y: float32x8, z: float32x8): float32x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmsub*(x: float32x16, y: float32x16, z: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float32x16, y: float32x16, z: float32x16): float32x16  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmsub*(x: float32x4, y: float32x4, z: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float32x4, y: float32x4, z: float32x4): float32x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmsub*(x: float64x8, y: float64x8, z: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float64x8, y: float64x8, z: float64x8): float64x8  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmsub*(x: float64x2, y: float64x2, z: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float64x2, y: float64x2, z: float64x2): float64x2  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc fmsub*(x: float64x4, y: float64x4, z: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
+proc `*-`*(x: float64x4, y: float64x4, z: float64x4): float64x4  {.header: simd, importcpp: "simdpp::fmsub(@)"}
 proc neg*(x: float32x8): float32x8  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float32x8): float32x8  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: float32x16): float32x16  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float32x16): float32x16  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: float32x4): float32x4  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float32x4): float32x4  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: float64x8): float64x8  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float64x8): float64x8  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: float64x2): float64x2  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float64x2): float64x2  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: float64x4): float64x4  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: float64x4): float64x4  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc round*(x: float32x8): float32x8  {.header: simd, importcpp: "simdpp::round(@)"}
 proc round*(x: float32x16): float32x16  {.header: simd, importcpp: "simdpp::round(@)"}
 proc round*(x: float32x4): float32x4  {.header: simd, importcpp: "simdpp::round(@)"}
@@ -4906,17 +4564,29 @@ proc `*`*(x: uint32x8, y: uint32x8): uint64x8  {.header: simd, importcpp: "simdp
 proc mull*(x: uint32x4, y: uint32x4): uint64x4  {.header: simd, importcpp: "simdpp::mull(@)"}
 proc `*`*(x: uint32x4, y: uint32x4): uint64x4  {.header: simd, importcpp: "simdpp::mull(@)"}
 proc neg*(x: int8x16): int8x16  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int8x16): int8x16  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int8x32): int8x32  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int8x32): int8x32  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int8x64): int8x64  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int8x64): int8x64  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int16x8): int16x8  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int16x8): int16x8  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int16x16): int16x16  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int16x16): int16x16  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int16x32): int16x32  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int16x32): int16x32  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int32x8): int32x8  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int32x8): int32x8  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int32x16): int32x16  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int32x16): int32x16  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int32x4): int32x4  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int32x4): int32x4  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int64x8): int64x8  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int64x8): int64x8  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int64x2): int64x2  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int64x2): int64x2  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc neg*(x: int64x4): int64x4  {.header: simd, importcpp: "simdpp::neg(@)"}
+proc `-`*(x: int64x4): int64x4  {.header: simd, importcpp: "simdpp::neg(@)"}
 proc cmp_lt*(x: int8x16, y: int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::cmp_lt(@)"}
 proc `<`*(x: int8x16, y: int8x16): mask_int8x16  {.header: simd, importcpp: "simdpp::cmp_lt(@)"}
 proc cmp_lt*(x: int8x32, y: int8x32): mask_int8x32  {.header: simd, importcpp: "simdpp::cmp_lt(@)"}

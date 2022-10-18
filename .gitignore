@@ -1,4 +1,5 @@
 nimcache/
 nimblecache/
 htmldocs/
-.ipynb_checkpoints
+.ipynb_checkpoints/
+libsimdpp/
