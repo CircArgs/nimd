@@ -1,0 +1,483 @@
+[OK] op: add, op_name: add, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `+`, op_name: add, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: add, op_name: add, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `+`, op_name: add, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: add, op_name: add, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `+`, op_name: add, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: add, op_name: add, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `+`, op_name: add, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: add, op_name: add, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `+`, op_name: add, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: add, op_name: add, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `+`, op_name: add, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: sub, op_name: sub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `-`, op_name: sub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: sub, op_name: sub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `-`, op_name: sub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: sub, op_name: sub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `-`, op_name: sub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: sub, op_name: sub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `-`, op_name: sub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: sub, op_name: sub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `-`, op_name: sub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: sub, op_name: sub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `-`, op_name: sub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: mul, op_name: mul, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `*`, op_name: mul, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: mul, op_name: mul, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `*`, op_name: mul, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: mul, op_name: mul, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `*`, op_name: mul, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: mul, op_name: mul, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `*`, op_name: mul, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: mul, op_name: mul, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `*`, op_name: mul, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: mul, op_name: mul, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `*`, op_name: mul, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(86, 15): Check failed: compare((divide(Vector(float32(5.0), 5.0, 6.0, 9.0, 8.0, 6.0, 6.0, 6.0),
+                Vector(float32(3.0), 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 2.0))).to_seq, @[
+    1.6666666269302368'f32, 1.25'f32, 1.5'f32, 2.25'f32, 2.0'f32, 1.5'f32,
+    1.5'f32, 3.0'f32])
+[FAILED] op: divide, op_name: div, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(88, 15): Check failed: compare((`/`(Vector(float32(6.0), 8.0, 8.0, 7.0, 7.0, 5.0, 5.0, 7.0),
+             Vector(float32(3.0), 2.0, 3.0, 2.0, 3.0, 1.0, 1.0, 2.0))).to_seq, @[
+    2.0'f32, 4.0'f32, 2.6666667461395264'f32, 3.5'f32, 2.3333332538604736'f32,
+    5.0'f32, 5.0'f32, 3.5'f32])
+[FAILED] op: `/`, op_name: div, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: divide, op_name: div, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `/`, op_name: div, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(94, 15): Check failed: compare((divide(Vector(float32(5.0), 7.0, 8.0, 8.0),
+                Vector(float32(4.0), 1.0, 3.0, 2.0))).to_seq,
+        @[1.25'f32, 7.0'f32, 2.6666667461395264'f32, 4.0'f32])
+[FAILED] op: divide, op_name: div, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `/`, op_name: div, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: divide, op_name: div, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `/`, op_name: div, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: divide, op_name: div, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `/`, op_name: div, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: divide, op_name: div, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `/`, op_name: div, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(110, 15): Check failed: compare((fmadd(Vector(float32(8.0), 5.0, 9.0, 8.0, 8.0, 7.0, 8.0, 7.0),
+               Vector(float32(3.0), 1.0, 2.0, 4.0, 1.0, 3.0, 2.0, 3.0),
+               Vector(float32(3.0), 4.0, 4.0, 1.0, 1.0, 4.0, 4.0, 2.0))).to_seq, @[
+    24.0'f32, 5.0'f32, 18.0'f32, 32.0'f32, 8.0'f32, 21.0'f32, 16.0'f32, 21.0'f32])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(112, 15): Check failed: compare((`*+`(Vector(float32(7.0), 7.0, 9.0, 8.0, 7.0, 9.0, 6.0, 8.0),
+              Vector(float32(3.0), 1.0, 4.0, 3.0, 2.0, 2.0, 3.0, 1.0),
+              Vector(float32(1.0), 2.0, 2.0, 2.0, 3.0, 1.0, 4.0, 4.0))).to_seq, @[
+    21.0'f32, 7.0'f32, 36.0'f32, 24.0'f32, 14.0'f32, 18.0'f32, 18.0'f32, 8.0'f32])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(114, 15): Check failed: compare((fmadd(Vector(float32(9.0), 6.0, 9.0, 9.0, 7.0, 6.0, 7.0, 7.0, 8.0, 8.0,
+                      7.0, 8.0, 7.0, 6.0, 8.0, 5.0), Vector(float32(3.0), 2.0,
+    2.0, 2.0, 2.0, 4.0, 4.0, 4.0, 3.0, 4.0, 4.0, 3.0, 4.0, 2.0, 2.0, 4.0), Vector(
+    float32(4.0), 1.0, 3.0, 1.0, 3.0, 3.0, 2.0, 3.0, 4.0, 3.0, 4.0, 3.0, 3.0,
+    3.0, 2.0, 3.0))).to_seq, @[27.0'f32, 12.0'f32, 18.0'f32, 18.0'f32, 14.0'f32,
+                               24.0'f32, 28.0'f32, 28.0'f32, 24.0'f32, 32.0'f32,
+                               28.0'f32, 24.0'f32, 28.0'f32, 12.0'f32, 16.0'f32,
+                               20.0'f32])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(116, 15): Check failed: compare((`*+`(Vector(float32(5.0), 9.0, 7.0, 7.0, 5.0, 7.0, 8.0, 8.0, 7.0, 5.0,
+                     8.0, 8.0, 8.0, 7.0, 5.0, 9.0), Vector(float32(1.0), 1.0,
+    1.0, 2.0, 2.0, 4.0, 4.0, 4.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 3.0, 2.0), Vector(
+    float32(1.0), 4.0, 1.0, 1.0, 1.0, 4.0, 1.0, 3.0, 2.0, 4.0, 4.0, 2.0, 2.0,
+    2.0, 4.0, 1.0))).to_seq, @[5.0'f32, 9.0'f32, 7.0'f32, 14.0'f32, 10.0'f32,
+                               28.0'f32, 32.0'f32, 32.0'f32, 14.0'f32, 10.0'f32,
+                               16.0'f32, 16.0'f32, 16.0'f32, 28.0'f32, 15.0'f32,
+                               18.0'f32])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(118, 15): Check failed: compare((fmadd(Vector(float32(8.0), 5.0, 7.0, 7.0),
+               Vector(float32(3.0), 1.0, 1.0, 1.0),
+               Vector(float32(2.0), 2.0, 1.0, 2.0))).to_seq,
+        @[24.0'f32, 5.0'f32, 7.0'f32, 7.0'f32])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/Projects/nimd/tests/tests.nim(120, 15): Check failed: compare((`*+`(Vector(float32(7.0), 8.0, 5.0, 9.0),
+              Vector(float32(4.0), 3.0, 1.0, 4.0),
+              Vector(float32(2.0), 2.0, 1.0, 4.0))).to_seq,
+        @[28.0'f32, 24.0'f32, 5.0'f32, 36.0'f32])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/Projects/nimd/tests/tests.nim(122, 15): Check failed: compare((fmadd(Vector(float64(6.0), 7.0, 5.0, 9.0, 8.0, 8.0, 5.0, 5.0),
+               Vector(float64(1.0), 1.0, 1.0, 1.0, 1.0, 2.0, 3.0, 4.0),
+               Vector(float64(3.0), 4.0, 3.0, 3.0, 2.0, 2.0, 4.0, 1.0))).to_seq, @[
+    6.0'f64, 7.0'f64, 5.0'f64, 9.0'f64, 8.0'f64, 16.0'f64, 15.0'f64, 20.0'f64])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/Projects/nimd/tests/tests.nim(124, 15): Check failed: compare((`*+`(Vector(float64(9.0), 7.0, 8.0, 8.0, 5.0, 6.0, 7.0, 5.0),
+              Vector(float64(4.0), 4.0, 4.0, 1.0, 2.0, 1.0, 2.0, 3.0),
+              Vector(float64(3.0), 1.0, 4.0, 3.0, 2.0, 2.0, 4.0, 4.0))).to_seq, @[
+    36.0'f64, 28.0'f64, 32.0'f64, 8.0'f64, 10.0'f64, 6.0'f64, 14.0'f64, 15.0'f64])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/Projects/nimd/tests/tests.nim(126, 15): Check failed: compare((fmadd(Vector(float64(5.0), 9.0), Vector(float64(4.0), 2.0),
+               Vector(float64(1.0), 3.0))).to_seq, @[20.0'f64, 18.0'f64])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/Projects/nimd/tests/tests.nim(128, 15): Check failed: compare((`*+`(Vector(float64(5.0), 7.0), Vector(float64(4.0), 2.0),
+              Vector(float64(2.0), 3.0))).to_seq, @[20.0'f64, 14.0'f64])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/Projects/nimd/tests/tests.nim(130, 15): Check failed: compare((fmadd(Vector(float64(7.0), 9.0, 5.0, 7.0),
+               Vector(float64(2.0), 1.0, 4.0, 2.0),
+               Vector(float64(4.0), 4.0, 4.0, 3.0))).to_seq,
+        @[14.0'f64, 9.0'f64, 20.0'f64, 14.0'f64])
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(132, 15): Check failed: compare((`*+`(Vector(float64(7.0), 7.0, 6.0, 7.0),
+              Vector(float64(1.0), 3.0, 3.0, 4.0),
+              Vector(float64(4.0), 3.0, 2.0, 1.0))).to_seq,
+        @[7.0'f64, 21.0'f64, 18.0'f64, 28.0'f64])
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(134, 15): Check failed: compare((fmsub(Vector(float32(7.0), 5.0, 6.0, 5.0, 8.0, 6.0, 9.0, 7.0),
+               Vector(float32(4.0), 4.0, 1.0, 2.0, 1.0, 2.0, 1.0, 4.0),
+               Vector(float32(1.0), 3.0, 3.0, 1.0, 4.0, 2.0, 4.0, 2.0))).to_seq, @[
+    -28.0'f32, -20.0'f32, -6.0'f32, -10.0'f32, -8.0'f32, -12.0'f32, -9.0'f32,
+    -28.0'f32])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(136, 15): Check failed: compare((`*-`(Vector(float32(7.0), 8.0, 7.0, 9.0, 5.0, 7.0, 8.0, 7.0),
+              Vector(float32(3.0), 3.0, 2.0, 3.0, 1.0, 2.0, 4.0, 1.0),
+              Vector(float32(4.0), 2.0, 1.0, 4.0, 4.0, 3.0, 2.0, 1.0))).to_seq, @[
+    -21.0'f32, -24.0'f32, -14.0'f32, -27.0'f32, -5.0'f32, -14.0'f32, -32.0'f32,
+    -7.0'f32])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(138, 15): Check failed: compare((fmsub(Vector(float32(6.0), 5.0, 9.0, 7.0, 8.0, 9.0, 7.0, 8.0, 6.0, 8.0,
+                      6.0, 5.0, 6.0, 8.0, 8.0, 7.0), Vector(float32(2.0), 1.0,
+    4.0, 2.0, 2.0, 1.0, 1.0, 1.0, 3.0, 2.0, 4.0, 3.0, 4.0, 3.0, 4.0, 1.0), Vector(
+    float32(1.0), 1.0, 1.0, 4.0, 3.0, 4.0, 1.0, 1.0, 3.0, 1.0, 3.0, 1.0, 2.0,
+    2.0, 3.0, 4.0))).to_seq, @[-12.0'f32, -5.0'f32, -36.0'f32, -14.0'f32,
+                               -16.0'f32, -9.0'f32, -7.0'f32, -8.0'f32,
+                               -18.0'f32, -16.0'f32, -24.0'f32, -15.0'f32,
+                               -24.0'f32, -24.0'f32, -32.0'f32, -7.0'f32])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(140, 15): Check failed: compare((`*-`(Vector(float32(5.0), 9.0, 5.0, 7.0, 5.0, 7.0, 5.0, 8.0, 5.0, 7.0,
+                     8.0, 5.0, 5.0, 7.0, 9.0, 8.0), Vector(float32(4.0), 2.0,
+    4.0, 3.0, 2.0, 2.0, 2.0, 4.0, 1.0, 4.0, 2.0, 1.0, 3.0, 1.0, 4.0, 1.0), Vector(
+    float32(1.0), 3.0, 2.0, 1.0, 3.0, 3.0, 3.0, 3.0, 4.0, 1.0, 3.0, 2.0, 4.0,
+    1.0, 4.0, 1.0))).to_seq, @[-20.0'f32, -18.0'f32, -20.0'f32, -21.0'f32,
+                               -10.0'f32, -14.0'f32, -10.0'f32, -32.0'f32,
+                               -5.0'f32, -28.0'f32, -16.0'f32, -5.0'f32,
+                               -15.0'f32, -7.0'f32, -36.0'f32, -8.0'f32])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(142, 15): Check failed: compare((fmsub(Vector(float32(5.0), 9.0, 9.0, 7.0),
+               Vector(float32(2.0), 1.0, 2.0, 1.0),
+               Vector(float32(3.0), 4.0, 2.0, 1.0))).to_seq,
+        @[-10.0'f32, -9.0'f32, -18.0'f32, -7.0'f32])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/Projects/nimd/tests/tests.nim(144, 15): Check failed: compare((`*-`(Vector(float32(6.0), 9.0, 5.0, 7.0),
+              Vector(float32(3.0), 4.0, 3.0, 3.0),
+              Vector(float32(1.0), 4.0, 3.0, 3.0))).to_seq,
+        @[-18.0'f32, -36.0'f32, -15.0'f32, -21.0'f32])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/Projects/nimd/tests/tests.nim(146, 15): Check failed: compare((fmsub(Vector(float64(7.0), 6.0, 7.0, 8.0, 9.0, 8.0, 7.0, 6.0),
+               Vector(float64(4.0), 1.0, 4.0, 4.0, 4.0, 1.0, 4.0, 3.0),
+               Vector(float64(2.0), 1.0, 1.0, 2.0, 4.0, 2.0, 4.0, 1.0))).to_seq, @[
+    -28.0'f64, -6.0'f64, -28.0'f64, -32.0'f64, -36.0'f64, -8.0'f64, -28.0'f64,
+    -18.0'f64])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/Projects/nimd/tests/tests.nim(148, 15): Check failed: compare((`*-`(Vector(float64(6.0), 5.0, 9.0, 7.0, 9.0, 6.0, 7.0, 5.0),
+              Vector(float64(3.0), 2.0, 1.0, 3.0, 2.0, 4.0, 2.0, 1.0),
+              Vector(float64(2.0), 2.0, 4.0, 2.0, 1.0, 3.0, 3.0, 3.0))).to_seq, @[
+    -18.0'f64, -10.0'f64, -9.0'f64, -21.0'f64, -18.0'f64, -24.0'f64, -14.0'f64,
+    -5.0'f64])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/Projects/nimd/tests/tests.nim(150, 15): Check failed: compare((fmsub(Vector(float64(8.0), 7.0), Vector(float64(3.0), 4.0),
+               Vector(float64(3.0), 1.0))).to_seq, @[-24.0'f64, -28.0'f64])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/Projects/nimd/tests/tests.nim(152, 15): Check failed: compare((`*-`(Vector(float64(7.0), 6.0), Vector(float64(2.0), 1.0),
+              Vector(float64(2.0), 3.0))).to_seq, @[-14.0'f64, -6.0'f64])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/Projects/nimd/tests/tests.nim(154, 15): Check failed: compare((fmsub(Vector(float64(6.0), 6.0, 8.0, 5.0),
+               Vector(float64(1.0), 1.0, 1.0, 4.0),
+               Vector(float64(1.0), 1.0, 3.0, 1.0))).to_seq,
+        @[-6.0'f64, -6.0'f64, -8.0'f64, -20.0'f64])
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(156, 15): Check failed: compare((`*-`(Vector(float64(9.0), 8.0, 7.0, 5.0),
+              Vector(float64(1.0), 4.0, 3.0, 2.0),
+              Vector(float64(4.0), 2.0, 1.0, 3.0))).to_seq,
+        @[-9.0'f64, -32.0'f64, -21.0'f64, -10.0'f64])
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+[OK] op: neg, op_name: neg, arg_type: float32x8, ret_type: float32x8
+[OK] op: `-`, op_name: neg, arg_type: float32x8, ret_type: float32x8
+[OK] op: neg, op_name: neg, arg_type: float32x16, ret_type: float32x16
+[OK] op: `-`, op_name: neg, arg_type: float32x16, ret_type: float32x16
+[OK] op: neg, op_name: neg, arg_type: float32x4, ret_type: float32x4
+[OK] op: `-`, op_name: neg, arg_type: float32x4, ret_type: float32x4
+[OK] op: neg, op_name: neg, arg_type: float64x8, ret_type: float64x8
+[OK] op: `-`, op_name: neg, arg_type: float64x8, ret_type: float64x8
+[OK] op: neg, op_name: neg, arg_type: float64x2, ret_type: float64x2
+[OK] op: `-`, op_name: neg, arg_type: float64x2, ret_type: float64x2
+[OK] op: neg, op_name: neg, arg_type: float64x4, ret_type: float64x4
+[OK] op: `-`, op_name: neg, arg_type: float64x4, ret_type: float64x4
+[OK] op: abs, op_name: abs, arg_type: float32x8, ret_type: float32x8
+[OK] op: abs, op_name: abs, arg_type: float32x16, ret_type: float32x16
+[OK] op: abs, op_name: abs, arg_type: float32x4, ret_type: float32x4
+[OK] op: abs, op_name: abs, arg_type: float64x8, ret_type: float64x8
+[OK] op: abs, op_name: abs, arg_type: float64x2, ret_type: float64x2
+[OK] op: abs, op_name: abs, arg_type: float64x4, ret_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(194, 15): Check failed: compare((sign(Vector(float32(1.0), 7.0, 9.0, 9.0, 3.0, 9.0, 9.0, 3.0))).to_seq, @[
+    1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32])
+[FAILED] op: sign, op_name: sign, arg_type: float32x8, ret_type: float32x8
+/home/nick/Projects/nimd/tests/tests.nim(196, 15): Check failed: compare((sign(Vector(float32(1.0), 2.0, 8.0, 2.0, 6.0, 5.0, 3.0, 1.0, 3.0, 3.0,
+                     9.0, 6.0, 1.0, 1.0, 2.0, 7.0))).to_seq, @[1.0'f32, 1.0'f32,
+    1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32,
+    1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32])
+[FAILED] op: sign, op_name: sign, arg_type: float32x16, ret_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(198, 15): Check failed: compare((sign(Vector(float32(9.0), 9.0, 9.0, 1.0))).to_seq,
+        @[1.0'f32, 1.0'f32, 1.0'f32, 1.0'f32])
+[FAILED] op: sign, op_name: sign, arg_type: float32x4, ret_type: float32x4
+/home/nick/Projects/nimd/tests/tests.nim(200, 15): Check failed: compare((sign(Vector(float64(8.0), 4.0, 9.0, 5.0, 9.0, 3.0, 9.0, 5.0))).to_seq, @[
+    1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64])
+[FAILED] op: sign, op_name: sign, arg_type: float64x8, ret_type: float64x8
+/home/nick/Projects/nimd/tests/tests.nim(202, 15): Check failed: compare((sign(Vector(float64(9.0), 8.0))).to_seq, @[1.0'f64, 1.0'f64])
+[FAILED] op: sign, op_name: sign, arg_type: float64x2, ret_type: float64x2
+/home/nick/Projects/nimd/tests/tests.nim(204, 15): Check failed: compare((sign(Vector(float64(3.0), 1.0, 4.0, 5.0))).to_seq,
+        @[1.0'f64, 1.0'f64, 1.0'f64, 1.0'f64])
+[FAILED] op: sign, op_name: sign, arg_type: float64x4, ret_type: float64x4
+/home/nick/Projects/nimd/tests/tests.nim(206, 15): Check failed: compare((sqrt(Vector(float32(3.0), 1.0, 8.0, 3.0, 8.0, 5.0, 7.0, 2.0))).to_seq, @[
+    1.7320507764816284'f32, 1.0'f32, 2.8284270763397217'f32,
+    1.7320507764816284'f32, 2.8284270763397217'f32, 2.2360680103302'f32,
+    2.6457512378692627'f32, 1.4142135381698608'f32])
+[FAILED] op: sqrt, op_name: sqrt, arg_type: float32x8, ret_type: float32x8
+[OK] op: sqrt, op_name: sqrt, arg_type: float32x16, ret_type: float32x16
+/home/nick/Projects/nimd/tests/tests.nim(210, 15): Check failed: compare((sqrt(Vector(float32(6.0), 6.0, 6.0, 5.0))).to_seq, @[
+    2.4494898319244385'f32, 2.4494898319244385'f32, 2.4494898319244385'f32,
+    2.2360680103302'f32])
+[FAILED] op: sqrt, op_name: sqrt, arg_type: float32x4, ret_type: float32x4
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x8, ret_type: float64x8
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x2, ret_type: float64x2
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x4, ret_type: float64x4
+[OK] op: add, op_name: add, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `+`, op_name: add, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: add, op_name: add, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `+`, op_name: add, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: add, op_name: add, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `+`, op_name: add, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: add, op_name: add, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `+`, op_name: add, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: add, op_name: add, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `+`, op_name: add, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: add, op_name: add, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `+`, op_name: add, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: sub, op_name: sub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `-`, op_name: sub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: sub, op_name: sub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `-`, op_name: sub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: sub, op_name: sub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `-`, op_name: sub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: sub, op_name: sub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `-`, op_name: sub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: sub, op_name: sub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `-`, op_name: sub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: sub, op_name: sub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `-`, op_name: sub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: mul, op_name: mul, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: `*`, op_name: mul, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: mul, op_name: mul, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `*`, op_name: mul, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: mul, op_name: mul, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `*`, op_name: mul, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: mul, op_name: mul, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `*`, op_name: mul, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: mul, op_name: mul, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `*`, op_name: mul, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: mul, op_name: mul, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `*`, op_name: mul, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: divide, op_name: div, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `/`, op_name: div, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8
+[OK] op: divide, op_name: div, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+[OK] op: `/`, op_name: div, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: divide, op_name: div, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: `/`, op_name: div, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4
+[OK] op: divide, op_name: div, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: `/`, op_name: div, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8
+[OK] op: divide, op_name: div, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: `/`, op_name: div, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2
+[OK] op: divide, op_name: div, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+[OK] op: `/`, op_name: div, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmadd, op_name: fmadd, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*+`, op_name: fmadd, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x8, ret_type: float32x8, arg2_type: float32x8, arg3_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x16, ret_type: float32x16, arg2_type: float32x16, arg3_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float32x4, ret_type: float32x4, arg2_type: float32x4, arg3_type: float32x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x8, ret_type: float64x8, arg2_type: float64x8, arg3_type: float64x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x2, ret_type: float64x2, arg2_type: float64x2, arg3_type: float64x2
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: fmsub, op_name: fmsub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: `*-`, op_name: fmsub, arg_type: float64x4, ret_type: float64x4, arg2_type: float64x4, arg3_type: float64x4
+[OK] op: neg, op_name: neg, arg_type: float32x8, ret_type: float32x8
+[OK] op: `-`, op_name: neg, arg_type: float32x8, ret_type: float32x8
+[OK] op: neg, op_name: neg, arg_type: float32x16, ret_type: float32x16
+[OK] op: `-`, op_name: neg, arg_type: float32x16, ret_type: float32x16
+[OK] op: neg, op_name: neg, arg_type: float32x4, ret_type: float32x4
+[OK] op: `-`, op_name: neg, arg_type: float32x4, ret_type: float32x4
+[OK] op: neg, op_name: neg, arg_type: float64x8, ret_type: float64x8
+[OK] op: `-`, op_name: neg, arg_type: float64x8, ret_type: float64x8
+[OK] op: neg, op_name: neg, arg_type: float64x2, ret_type: float64x2
+[OK] op: `-`, op_name: neg, arg_type: float64x2, ret_type: float64x2
+[OK] op: neg, op_name: neg, arg_type: float64x4, ret_type: float64x4
+[OK] op: `-`, op_name: neg, arg_type: float64x4, ret_type: float64x4
+[OK] op: abs, op_name: abs, arg_type: float32x8, ret_type: float32x8
+[OK] op: abs, op_name: abs, arg_type: float32x16, ret_type: float32x16
+[OK] op: abs, op_name: abs, arg_type: float32x4, ret_type: float32x4
+[OK] op: abs, op_name: abs, arg_type: float64x8, ret_type: float64x8
+[OK] op: abs, op_name: abs, arg_type: float64x2, ret_type: float64x2
+[OK] op: abs, op_name: abs, arg_type: float64x4, ret_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float32x8, ret_type: float32x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float32x16, ret_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float32x4, ret_type: float32x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float64x8, ret_type: float64x8
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float64x2, ret_type: float64x2
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sign, op_name: sign, arg_type: float64x4, ret_type: float64x4
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sqrt, op_name: sqrt, arg_type: float32x8, ret_type: float32x8
+[OK] op: sqrt, op_name: sqrt, arg_type: float32x16, ret_type: float32x16
+/home/nick/.choosenim/toolchains/nim-1.6.8/lib/pure/unittest.nim(704) tests
+/home/nick/Projects/nimd/tests/tests.nim(11) compare
+
+Unhandled exception: some error [CatchableError]
+[FAILED] op: sqrt, op_name: sqrt, arg_type: float32x4, ret_type: float32x4
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x8, ret_type: float64x8
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x2, ret_type: float64x2
+[OK] op: sqrt, op_name: sqrt, arg_type: float64x4, ret_type: float64x4
